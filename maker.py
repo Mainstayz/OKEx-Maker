@@ -4,10 +4,12 @@ import numpy as np
 import datetime as dt
 import time
 import talib
+from log import Logger
 
 pd.set_option('expand_frame_repr', False)
 pd.set_option('display.max_columns', 10)
 pd.set_option('display.max_rows', 500)
+
 # 代理
 enable_proxies = True
 
@@ -31,6 +33,9 @@ timeframe = '15m'
 period = 7
 multiplier = 3
 
+log = Logger('all.log',level='debug')
+
+log.logger.info('----- start -----')
 
 def beforeHours2Timestamp(hours):
     return int(time.time() * 1000) - hours*60*60*1000
@@ -134,7 +139,9 @@ for currency in base:
         if base_pos['free'] > 1:
             amount = base_pos['free']
             response = exchange.create_market_sell_order(symbol, amount)
-            print('平仓:%s' % response)
+            log.logger.debug('%s Sell:%s' % (symbol, response))
+        else:
+            log.logger.debug('%s down.. And nothing ...',symbol)
 
     elif signal == 'up':
         # 满仓就是干
@@ -145,8 +152,9 @@ for currency in base:
             ask = order_book['asks'][0][0] if len(order_book['asks']) > 0 else None
             amount = free_quote / ask
             response = exchange.create_limit_buy_order(symbol, amount, ask)
-            print('满仓 %s' % response)
-
+            log.logger.debug('%s Bull:%s' % (symbol, response))
+        else:
+            log.logger.debug('%s up.. And nothing ...',symbol)
     else:
         pass
 
