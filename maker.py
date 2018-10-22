@@ -18,8 +18,8 @@ proxies = {
     'http': 'http://127.0.0.1:8001',
     'https': 'http://127.0.0.1:8001',
 }
-apiKey = '7be540e6-64ee-4558-93f3-c9d2c4b189b6'
-secret = 'AE15582782584C3A63388FCE03AAC7F4'
+apiKey = ''
+secret = ''
 
 base = ['XRP', 'OF']
 quote = 'USDT'
