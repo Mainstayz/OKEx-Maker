@@ -1,0 +1,22 @@
+{
+    "running": false,
+    "enable_proxy": true,
+    "proxies": {
+        "http": "http://127.0.0.1:8001",
+        "https": "http://127.0.0.1:8001"
+    },
+    "apiKey": "",
+    "secret": "",
+    "base": [
+        "XRP",
+        "OF"
+    ],
+    "quote": "USDT",
+    "timeframe": "15m",
+    "strategies": {
+        "STA": {
+            "period": 7,
+            "multiplier": 3
+        }
+    }
+}

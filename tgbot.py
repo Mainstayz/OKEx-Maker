@@ -9,13 +9,21 @@ import sys
 from threading import Thread
 
 
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = ''
+
+logger.warning("current pid: %s", os.getpid())
+len = len(sys.argv)
+for i in range(len):
+    logger.warning(sys.argv[i])
+
+TOKEN = '706594478:AAFjQFtuHgiR_DoB1HO9MJdPwoI_IpmkMzw'
+
 REQUEST_KWARGS = {
-    'proxy_url': 'http://127.0.0.1:8001'
+    'proxy_url': 'http://127.0.0.1:1087'
 }
 
 # userId =  741547351

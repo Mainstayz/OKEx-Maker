@@ -5,6 +5,7 @@ import datetime as dt
 import time
 import talib
 from log import Logger
+from config import *
 
 pd.set_option('expand_frame_repr', False)
 pd.set_option('display.max_columns', 10)
