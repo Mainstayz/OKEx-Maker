@@ -20,7 +20,7 @@ len = len(sys.argv)
 for i in range(len):
     logger.warning(sys.argv[i])
 
-TOKEN = '706594478:AAFjQFtuHgiR_DoB1HO9MJdPwoI_IpmkMzw'
+TOKEN = ''
 
 REQUEST_KWARGS = {
     'proxy_url': 'http://127.0.0.1:1087'
