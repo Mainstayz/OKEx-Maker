@@ -36,8 +36,9 @@ REQUEST_KWARGS = {
 # decorater:不用每定义一个函数都要用handler以及add_handler
 #@command(CommandHandler,'start')
 #@command(MessageHandler,Filters.text)
-def command(handler,cmd=None,**kw):
+def command(dispatcher,handler,cmd=None,**kw):
     def decorater(func):
+        @wraps(func)
         def wrapper(*args,**kw):
             return func(*args,**kw)
         if cmd==None:
