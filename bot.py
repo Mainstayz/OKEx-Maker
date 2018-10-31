@@ -1,5 +1,6 @@
 import os
 import sys
+import socket
 import logging
 from telegram import *
 from telegram.ext import *
@@ -42,14 +43,23 @@ def start(bot, update):
 def unknown(bot, update):
     update.message.reply_text("Sorry, I didn't understand that command!")
 
+
+def start_socket():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    print('Bind UDP on 9999...')
+    while True:
+        # 接收数据:
+        data, addr = s.recvfrom(1024)
+        print('Received from %s:%s.' % addr)
+        reply = 'Hello, %s!' % data.decode('utf-8')
+        s.sendto(reply.encode('utf-8'), addr)
+
 def main():
 
     TOKEN = '706594478:AAFjQFtuHgiR_DoB1HO9MJdPwoI_IpmkMzw'
-
     REQUEST_KWARGS = {
         'proxy_url': 'http://127.0.0.1:1087'
     }
-
     updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS)
     dispatcher = updater.dispatcher
 
@@ -70,9 +80,9 @@ def main():
     dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
     updater.start_polling()
-
     updater.idle()
-    pass
+
+    # 启动socket
 
 
 
