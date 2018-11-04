@@ -1,22 +1,24 @@
 {
-    "running": false,
-    "enable_proxy": true,
-    "proxies": {
-        "http": "http://127.0.0.1:8001",
-        "https": "http://127.0.0.1:8001"
-    },
-    "apiKey": "",
-    "secret": "",
-    "base": [
-        "XRP",
-        "OF"
-    ],
-    "quote": "USDT",
-    "timeframe": "15m",
-    "strategies": {
-        "STA": {
-            "period": 7,
-            "multiplier": 3
-        }
+  "running": false,
+  "enable_proxy": true,
+  "test": true,
+  "api_rest_interval": 5,
+  "api_error_interval": 5,
+  "proxies": {
+    "http": "http://127.0.0.1:8001",
+    "https": "http://127.0.0.1:8001"
+  },
+  "api_key": "7d1u9ttNtNZgnxSc60Usg3bG",
+  "secret": "UVxPTX3hluddC3ElYLAlktlk7_vhaZMmtPXjRCiNqTFZMR7x",
+  "symbol": "BTC/USD",
+  "contracts": [
+    "BTC/USD"
+  ],
+  "time_frame": "15m",
+  "strategies": {
+    "STA": {
+      "period": 7,
+      "multiplier": 3
     }
+  }
 }
