@@ -1,5 +1,6 @@
 import ccxt
 import json
+import pandas as pd
 
 TOKEN = {
     "api": {
@@ -65,6 +66,16 @@ class Bitmex:
         responder = self._curl(query, 'publicGetInstrument')
         return responder[0] if responder and len(responder) > 0 else None
 
+    def fetch_ohlc(self, symbol, timeframe='15Min',limit=576):
+        # 两天前
+        ohloc_data = self.client.fetch_ohlcv(symbol, '5m', limit=limit, params={'reverse': True})
+        df = pd.DataFrame(data=ohloc_data, columns=['date', 'open', 'high', 'low', 'close', 'volume'])
+        df['date'] = pd.to_datetime(df['date'], unit='ms')
+        df.set_index("date", inplace=True)
+        # 合并
+        result = df['close'].resample(timeframe).ohlc()
+        return result
+
     @authentication_required
     def funds(self):
         return self.client.fetch_balance()
@@ -121,25 +132,29 @@ if __name__ == '__main__':
     # print(bitmex.client.market_id('BTC/USD'))
     # print(bitmex.funds())
     # print(bitmex.position('BTC/USD'))
-    print(bitmex.cancel_order('77b5bfe7-9b7b-25da-4734-e7cb23e2cd0c'))
-# exchange = ccxt.bitmex({
-#     'apiKey': '7d1u9ttNtNZgnxSc60Usg3bG',
-#     'secret': 'UVxPTX3hluddC3ElYLAlktlk7_vhaZMmtPXjRCiNqTFZMR7x',
-#     'proxies': proxies
-# })
-# if 'test' in exchange.urls:
-#     exchange.urls['api'] = exchange.urls['test']  # ←----- switch the base URL to testnet
-# exchange.enableRateLimit = True
-# exchange.create_limit_buy_order()
-# # 获取USD
-# mexbal = exchange.fetch_total_balance()
-# mexusd = mexbal['BTC'] * exchange.fetch_ticker('BTC/USD')['last']
-# print(mexbal)
-# print(mexusd)
-#
-# respon = exchange.fetch_closed_orders('BTC/USD')
-#
-# print(respon)
-#
-# orders = exchange.fetch_orders('BTC/USD')
-# print(orders)
+    # print(bitmex.cancel_order('77b5bfe7-9b7b-25da-4734-e7cb23e2cd0c'))
+
+    result = bitmex.fetch_ohlc('BTC/USD')
+    print(result)
+
+    # exchange = ccxt.bitmex({
+    #     'apiKey': '7d1u9ttNtNZgnxSc60Usg3bG',
+    #     'secret': 'UVxPTX3hluddC3ElYLAlktlk7_vhaZMmtPXjRCiNqTFZMR7x',
+    #     'proxies': proxies
+    # })
+    # if 'test' in exchange.urls:
+    #     exchange.urls['api'] = exchange.urls['test']  # ←----- switch the base URL to testnet
+    # exchange.enableRateLimit = True
+    # exchange.create_limit_buy_order()
+    # # 获取USD
+    # mexbal = exchange.fetch_total_balance()
+    # mexusd = mexbal['BTC'] * exchange.fetch_ticker('BTC/USD')['last']
+    # print(mexbal)
+    # print(mexusd)
+    #
+    # respon = exchange.fetch_closed_orders('BTC/USD')
+    #
+    # print(respon)
+    #
+    # orders = exchange.fetch_orders('BTC/USD')
+    # print(orders)
