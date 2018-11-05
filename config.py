@@ -15,6 +15,7 @@ class Config:
         self.strategies = []
         self.api_rest_interval = 0
         self.api_error_interval = 0
+        self.loop_interval = 0
         self.contracts = []
         self.__dict__.update(entries)
 

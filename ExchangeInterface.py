@@ -1,13 +1,25 @@
+import os
 import sys
 import atexit
 import signal
+import constants
 from datetime import datetime
+from os.path import getmtime
 from time import sleep
 from log import Logger
 from bitmex_ccxt import Bitmex
 from config import Config
 
+# log
 log = Logger('exchangeInterface.log', level='debug')
+
+# 需要监听的文件
+
+watched_files = ['config.json']
+
+# <class 'tuple'>: ('config.json', 1541306559.740827)
+watched_files_mtimes = [(f, getmtime(f)) for f in watched_files]
+
 settings = Config.load()
 
 
@@ -151,7 +163,6 @@ class ExchangeInterface:
             raise Exception("Order book is empty, cannot quote")
 
 
-
 class OrderManager:
     def __init__(self):
         self.exchange = ExchangeInterface(settings.symbol)
@@ -167,6 +178,7 @@ class OrderManager:
         self.instrument = self.exchange.get_instrument()
         self.starting_qty = self.exchange.get_delta()
         self.running_qty = self.starting_qty
+        self.start_XBT = 0
         self.reset()
 
     def reset(self):
@@ -175,31 +187,48 @@ class OrderManager:
         self.print_status()
 
     def print_status(self):
-        """Print the current MM status."""
 
+        """Print the current MM status."""
+        # 获取合约钱包
         margin = self.exchange.get_margin()
+
+        # 获取仓位信息
         position = self.exchange.get_position()
+
+        # 获取当前合约数量
         self.running_qty = self.exchange.get_delta()
-        self.start_XBt = margin['BTC']['total']
-        log.logger.info("Current XBT Balance: %.6f" % self.start_XBt)
-        log.logger.info("Current Contract Position: %d" % self.running_qty)
+
+        self.start_XBT = margin['BTC']['total']
+        log.logger.info("当前 XBT 钱包: %.6f" % self.start_XBT)
+        log.logger.info("当前仓位: %d" % self.running_qty)
         # if settings.CHECK_POSITION_LIMITS:
         #     logger.info("Position limits: %d/%d" % (settings.MIN_POSITION, settings.MAX_POSITION))
         if position['currentQty'] != 0:
-            log.logger.info("Avg Cost Price: %.f" % (float(position['avgCostPrice'])))
-            log.logger.info("Avg Entry Price: %.f" % (float(position['avgEntryPrice'])))
-        log.logger.info("Contracts Traded This Run: %d" % (self.running_qty - self.starting_qty))
-        log.logger.info("Total Contract Delta: %.4f XBT" % self.exchange.calc_delta()['spot'])
+            log.logger.info("平均成本价格: %.f" % (float(position['avgCostPrice'])))
+            log.logger.info("平均买入价格: %.f" % (float(position['avgEntryPrice'])))
+        log.logger.info("当前合约交易: %d" % (self.running_qty - self.starting_qty))
+        log.logger.info("Delta值: %.4f XBT" % self.exchange.calc_delta()['spot'])
 
-
-    ###
-    # Sanity
-    ##
     def sanity_check(self):
-        # 检查仓位
+
+        # 检查市场
         self.exchange.check_market_health()
 
+        # TODO: 检查仓位
+
+    def check_file_change(self):
+        """Restart if any files we're watching have changed."""
+        for f, mtime in watched_files_mtimes:
+            if getmtime(f) > mtime:
+                self.restart()
+
+    def restart(self):
+        '''这里需要发通知'''
+        log.logger.info("Restarting the market maker...")
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+
     def exit(self):
+        '''这里需要发通知'''
         log.logger.info("Shutting down. All open orders will be cancelled.")
         try:
             self.exchange.cancel_all_orders()
@@ -207,20 +236,47 @@ class OrderManager:
             log.logger.info("Unable to cancel orders: %s" % e)
         sys.exit()
 
+    def place_orders(self):
+        pass
 
+    def run_loop(self):
+        while True:
+            # 清屏
+            sys.stdout.write("-----\n")
+            sys.stdout.flush()
 
+            # 检查文件是否发生改变
+            self.check_file_change()
+
+            # 确保正常获取到市场行情
+            self.sanity_check()
+
+            # 打印当前状态
+            self.print_status()
+
+            # 下单
+            self.place_orders()  # Creates desired orders and converges to existing orders
+
+            # 线程休息
+            sleep(settings.loop_interval)
+
+def cost(instrument, quantity, price):
+    mult = instrument["multiplier"]
+    P = mult * price if mult >= 0 else mult / price
+    return abs(quantity * P)
+
+# 委托价值
+def margin(instrument, quantity, price):
+    return cost(instrument, quantity, price) * instrument["initMargin"]
 
 def run():
-    # exchange = ExchangeInterface('BTC/USD')
-    # orders = exchange.get_orders()
-    # print(orders)
-    # exchange.cancel_all_orders()
-    # print(exchange.get_portfolio())
-    # print(exchange.calc_delta())
-    # print(exchange.get_ticker())
-    manager = OrderManager()
-    pass
-
+    log.logger.info('BitMEX Market Maker Version: %s\n' % constants.VERSION)
+    om = OrderManager()
+    # Try/except just keeps ctrl-c from printing an ugly stacktrace
+    try:
+        om.run_loop()
+    except (KeyboardInterrupt, SystemExit):
+        sys.exit()
 
 
 if __name__ == '__main__':
