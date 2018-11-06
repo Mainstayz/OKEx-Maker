@@ -34,12 +34,13 @@ timeframe = '15m'
 period = 7
 multiplier = 3
 
-log = Logger('all.log',level='debug')
+log = Logger('all.log', level='debug')
 
 log.logger.info('----- start -----')
 
+
 def beforeHours2Timestamp(hours):
-    return int(time.time() * 1000) - hours*60*60*1000
+    return int(time.time() * 1000) - hours * 60 * 60 * 1000
 
 
 def ymdhms(timestamp):
@@ -48,7 +49,6 @@ def ymdhms(timestamp):
 
 
 def super_trend_ATR(df, period, multiplier):
-
     atr = 'atr_' + str(period)
     st = 'st_' + str(period) + '_' + str(multiplier)
     stx = 'stx_' + str(period) + '_' + str(multiplier)
@@ -67,10 +67,10 @@ def super_trend_ATR(df, period, multiplier):
 
     for i in range(period, len(df)):
         df['final_ub'].iat[i] = df['basic_ub'].iat[i] if df['basic_ub'].iat[i] < df['final_ub'].iat[i - 1] or \
-            df['close'].iat[i - 1] > df['final_ub'].iat[i - 1] else \
+                                                         df['close'].iat[i - 1] > df['final_ub'].iat[i - 1] else \
             df['final_ub'].iat[i - 1]
         df['final_lb'].iat[i] = df['basic_lb'].iat[i] if df['basic_lb'].iat[i] > df['final_lb'].iat[i - 1] or \
-            df['close'].iat[i - 1] < df['final_lb'].iat[i - 1] else \
+                                                         df['close'].iat[i - 1] < df['final_lb'].iat[i - 1] else \
             df['final_lb'].iat[i - 1]
 
     # Set the Supertrend value
@@ -79,11 +79,11 @@ def super_trend_ATR(df, period, multiplier):
         df[st].iat[i] = df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[
             i] <= df['final_ub'].iat[i] else \
             df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] > \
-            df['final_ub'].iat[i] else \
-            df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= \
-            df['final_lb'].iat[i] else \
-            df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < \
-            df['final_lb'].iat[i] else 0.00
+                                     df['final_ub'].iat[i] else \
+                df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= \
+                                         df['final_lb'].iat[i] else \
+                    df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < \
+                                             df['final_lb'].iat[i] else 0.00
 
     # Mark the trend direction up/down
     df[stx] = np.where((df[st] > 0.00), np.where(
@@ -116,7 +116,7 @@ for currency in base:
     info = exchange.fetch_balance()
     base_pos = info[currency]
     quote_pos = info[quote]
-    
+
     # 货币组合
     symbol = '{}/{}'.format(currency, quote)
 
@@ -124,7 +124,7 @@ for currency in base:
     data = exchange.fetchOHLCV(symbol=symbol, timeframe=timeframe, since=since)
 
     kline_data = pd.DataFrame(data=data, columns=[
-                              'timestamp', 'open', 'high', 'low', 'close', 'volume'], dtype=float)
+        'timestamp', 'open', 'high', 'low', 'close', 'volume'], dtype=float)
 
     business_date = kline_data.timestamp.apply(lambda x: ymdhms(x))
     # 插入date
@@ -142,7 +142,7 @@ for currency in base:
             response = exchange.create_market_sell_order(symbol, amount)
             log.logger.debug('%s Sell:%s' % (symbol, response))
         else:
-            log.logger.debug('%s down.. And nothing ...',symbol)
+            log.logger.debug('%s down.. And nothing ...', symbol)
 
     elif signal == 'up':
         # 满仓就是干
@@ -155,7 +155,7 @@ for currency in base:
             response = exchange.create_limit_buy_order(symbol, amount, ask)
             log.logger.debug('%s Bull:%s' % (symbol, response))
         else:
-            log.logger.debug('%s up.. And nothing ...',symbol)
+            log.logger.debug('%s up.. And nothing ...', symbol)
     else:
         pass
 

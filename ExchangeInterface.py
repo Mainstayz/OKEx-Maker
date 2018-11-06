@@ -28,8 +28,10 @@ class ExchangeInterface:
         self.symbol = symbol
         self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=True, test=True)
 
-    def get_orders(self):
-        return self.bitmex.fetch_open_orders(self.symbol)
+    def get_ohlc(self, symbol=None, timeframe='15Min', limit=750):
+        if symbol is None:
+            symbol = self.symbol
+        return self.bitmex.fetch_ohlc(symbol, timeframe=timeframe, limit=limit)
 
     def cancel_order(self, order):
 
@@ -201,8 +203,11 @@ class OrderManager:
         self.start_XBT = margin['BTC']['total']
         log.logger.info("当前 XBT 钱包: %.6f" % self.start_XBT)
         log.logger.info("当前仓位: %d" % self.running_qty)
+
+        # 检查仓位
         # if settings.CHECK_POSITION_LIMITS:
         #     logger.info("Position limits: %d/%d" % (settings.MIN_POSITION, settings.MAX_POSITION))
+
         if position['currentQty'] != 0:
             log.logger.info("平均成本价格: %.f" % (float(position['avgCostPrice'])))
             log.logger.info("平均买入价格: %.f" % (float(position['avgEntryPrice'])))
@@ -260,14 +265,17 @@ class OrderManager:
             # 线程休息
             sleep(settings.loop_interval)
 
+
 def cost(instrument, quantity, price):
     mult = instrument["multiplier"]
     P = mult * price if mult >= 0 else mult / price
     return abs(quantity * P)
 
+
 # 委托价值
 def margin(instrument, quantity, price):
     return cost(instrument, quantity, price) * instrument["initMargin"]
+
 
 def run():
     log.logger.info('BitMEX Market Maker Version: %s\n' % constants.VERSION)
@@ -277,7 +285,3 @@ def run():
         om.run_loop()
     except (KeyboardInterrupt, SystemExit):
         sys.exit()
-
-
-if __name__ == '__main__':
-    run()

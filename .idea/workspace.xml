@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a577d49a-5af2-4b34-a179-d27f881bfc3f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ST_ATR_Strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExchangeInterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExchangeInterface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitmex_ccxt.py" beforeDir="false" afterPath="$PROJECT_DIR$/bitmex_ccxt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exchangeInterface.log" beforeDir="false" afterPath="$PROJECT_DIR$/exchangeInterface.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/maker.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,6 +18,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/maker$bitmex_ccxt.coverage" NAME="bitmex_ccxt Coverage Results" MODIFIED="1541350022916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/maker$ST_ATR_Strategy.coverage" NAME="ST_ATR_Strategy Coverage Results" MODIFIED="1541518000231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$bot.coverage" NAME="bot Coverage Results" MODIFIED="1541004807086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$ExchangeInterface.coverage" NAME="ExchangeInterface Coverage Results" MODIFIED="1541432020978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$bitmex.coverage" NAME="bitmex Coverage Results" MODIFIED="1541088350364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ccxt" />
@@ -28,8 +28,8 @@
       <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="16" />
+            <state relative-caret-position="315">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -37,8 +37,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -46,11 +46,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="bitmex_ccxt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitmex_ccxt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="134" column="72" selection-start-line="134" selection-start-column="72" selection-end-line="134" selection-end-column="72" />
+            <state relative-caret-position="440">
+              <caret line="68" column="50" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="50" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -58,16 +67,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExchangeInterface.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ExchangeInterface.py">
+      <file leaf-file-name="ST_ATR_Strategy.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ST_ATR_Strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
+            <state relative-caret-position="82">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
-                <element signature="e#1#10#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExchangeInterface.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExchangeInterface.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
@@ -79,10 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maker.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="maker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/maker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-386">
+            <state relative-caret-position="103">
+              <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -128,6 +152,7 @@
       <find>symbol</find>
       <find>start_XBT</find>
       <find>calc_delta</find>
+      <find>get_orders</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,9 +167,11 @@
         <option value="$PROJECT_DIR$/log.py" />
         <option value="$PROJECT_DIR$/bitmex_ccxt.py" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/maker.py" />
         <option value="$PROJECT_DIR$/ExchangeInterface.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/ST_ATR_Strategy.py" />
       </list>
     </option>
   </component>
@@ -207,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ExchangeInterface">
+  <component name="RunManager" selected="Python.ST_ATR_Strategy">
     <configuration name="ExchangeInterface" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="maker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -222,6 +249,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ExchangeInterface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="ST_ATR_Strategy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="maker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ST_ATR_Strategy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,9 +354,11 @@
       <item itemvalue="Python.bitmex_ccxt" />
       <item itemvalue="Python.bitmex" />
       <item itemvalue="Python.ExchangeInterface" />
+      <item itemvalue="Python.ST_ATR_Strategy" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ST_ATR_Strategy" />
         <item itemvalue="Python.ExchangeInterface" />
         <item itemvalue="Python.bitmex_ccxt" />
         <item itemvalue="Python.bitmex" />
@@ -344,19 +392,19 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.21953125" side_tool="true" visible="true" weight="0.0" />
-      <window_info anchor="right" x="0" y="0" width="270" height="600" id="Documentation" order="5" sideWeight="0.118620686" side_tool="true" visible="true" weight="7.8125E-4" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.2203125" side_tool="true" visible="true" weight="0.3875862" />
+      <window_info anchor="right" x="0" y="0" width="270" height="600" id="Documentation" order="5" sideWeight="0.12162162" side_tool="true" visible="true" weight="0.16171876" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.30068967" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.5735294" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21953125" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.30068967" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5735294" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21953125" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="4" sideWeight="0.8813793" visible="true" weight="7.8125E-4" />
+      <window_info anchor="right" id="SciView" order="4" sideWeight="0.8783784" visible="true" weight="0.16171876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.78046876" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7796875" weight="0.3875862" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -365,7 +413,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="7" weight="0.0" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="11" weight="0.0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +428,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ST_ATR_Strategy.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -387,7 +442,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -416,9 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#1#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -529,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4620">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pandas/core/tools/datetimes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
@@ -567,45 +612,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-386">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bitmex_ccxt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="134" column="72" selection-start-line="134" selection-start-column="72" selection-end-line="134" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exchangeInterface.log.2018-11-04">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-958" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/constants.py">
@@ -615,12 +624,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExchangeInterface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
+        <state relative-caret-position="112">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding>
-            <element signature="e#1#10#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ST_ATR_Strategy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitmex_ccxt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="68" column="50" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
