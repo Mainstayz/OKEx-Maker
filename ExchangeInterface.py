@@ -24,6 +24,7 @@ settings = Config.load()
 
 
 class ExchangeInterface:
+
     def __init__(self, symbol):
         self.symbol = symbol
         self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=True, test=True)
@@ -156,6 +157,27 @@ class ExchangeInterface:
             symbol = self.symbol
         return self.bitmex.ticker_data(symbol)
 
+    def create_limit_buy_order(self, amount, price, symbol=None):
+        if symbol is None:
+            symbol = self.symbol
+        return self.bitmex.create_limit_buy_order(symbol=symbol, amount=amount, price=price)
+
+    def create_limit_sell_order(self, amount, price, symbol=None):
+        if symbol is None:
+            symbol = self.symbol
+        return self.bitmex.create_limit_sell_order(symbol=symbol, amount=amount, price=price)
+
+    def create_limit_order(self, amount, price, symbol=None):
+        if symbol is None:
+            symbol = self.symbol
+        if amount > 0:
+            return self.bitmex.create_limit_buy_order(symbol=symbol, amount=amount, price=price)
+        elif amount < 0:
+            return self.bitmex.create_limit_sell_order(symbol=symbol, amount=amount, price=price)
+        else:
+            log.logger.error('amount should not be Zero.')
+            return None
+
     def check_market_health(self):
         instrument = self.get_instrument()
         if instrument["state"] != "Open" and instrument["state"] != "Closed":
@@ -167,7 +189,8 @@ class ExchangeInterface:
 
 class OrderManager:
     def __init__(self):
-        self.exchange = ExchangeInterface(settings.symbol)
+        self.symbol = settings.symbol
+        self.exchange = ExchangeInterface(self.symbol)
         # Once exchange is created, register exit handler that will always cancel orders
         # on any error.
         atexit.register(self.exit)
@@ -177,42 +200,47 @@ class OrderManager:
         log.logger.info("Order Manager initializing, connecting to BitMEX. Live run: executing real trades.")
 
         self.start_time = datetime.now()
-        self.instrument = self.exchange.get_instrument()
-        self.starting_qty = self.exchange.get_delta()
-        self.running_qty = self.starting_qty
-        self.start_XBT = 0
+
+        self.instrument = None
+        self.margin = None
+        self.position = None
+
         self.reset()
 
     def reset(self):
+        log.logger.info("Reset status")
+        # 取消所以订单
         self.exchange.cancel_all_orders()
+        # 检查环境
         self.sanity_check()
+        # 更新状态
         self.print_status()
+        # 下单
+        self.place_orders()
 
     def print_status(self):
 
         """Print the current MM status."""
+        # 更新
+        self.instrument = self.exchange.get_instrument()
+
         # 获取合约钱包
-        margin = self.exchange.get_margin()
+        self.margin = self.exchange.get_margin()
+        log.logger.info("当前 XBT 钱包: %.6f" % self.margin['BTC']['total'])
 
         # 获取仓位信息
-        position = self.exchange.get_position()
+        self.position = self.exchange.get_position()
 
-        # 获取当前合约数量
-        self.running_qty = self.exchange.get_delta()
-
-        self.start_XBT = margin['BTC']['total']
-        log.logger.info("当前 XBT 钱包: %.6f" % self.start_XBT)
-        log.logger.info("当前仓位: %d" % self.running_qty)
+        running_qty = self.position['currentQty']
+        log.logger.info("当前仓位: %d" % running_qty)
 
         # 检查仓位
         # if settings.CHECK_POSITION_LIMITS:
         #     logger.info("Position limits: %d/%d" % (settings.MIN_POSITION, settings.MAX_POSITION))
 
-        if position['currentQty'] != 0:
-            log.logger.info("平均成本价格: %.f" % (float(position['avgCostPrice'])))
-            log.logger.info("平均买入价格: %.f" % (float(position['avgEntryPrice'])))
-        log.logger.info("当前合约交易: %d" % (self.running_qty - self.starting_qty))
-        log.logger.info("Delta值: %.4f XBT" % self.exchange.calc_delta()['spot'])
+        if running_qty != 0:
+            log.logger.info("平均成本价格: %.f" % (float(self.position['avgCostPrice'])))
+            log.logger.info("平均买入价格: %.f" % (float(self.position['avgEntryPrice'])))
 
     def sanity_check(self):
 
@@ -260,21 +288,32 @@ class OrderManager:
             self.print_status()
 
             # 下单
-            self.place_orders()  # Creates desired orders and converges to existing orders
+            self.place_orders()
 
             # 线程休息
             sleep(settings.loop_interval)
 
 
-def cost(instrument, quantity, price):
-    mult = instrument["multiplier"]
+def XBt_to_XBT(XBt):
+    return float(XBt) / 100000000
+
+
+def XBT_to_XBt(XBT):
+    return float(XBT) * 100000000
+
+
+# 开仓成本
+# 保证金 = 开仓成本/杠杆
+def cost(mult, quantity, price):
     P = mult * price if mult >= 0 else mult / price
-    return abs(quantity * P)
+    return XBt_to_XBT(abs(quantity * P))
 
 
-# 委托价值
-def margin(instrument, quantity, price):
-    return cost(instrument, quantity, price) * instrument["initMargin"]
+def quantity(mult, btc, price):
+    '''根据BTC 以及 当前价格 换算成 数量'''
+    P = mult * price if mult >= 0 else mult / price
+    xbt = XBT_to_XBt(btc)
+    return abs(xbt / P)
 
 
 def run():
@@ -285,3 +324,10 @@ def run():
         om.run_loop()
     except (KeyboardInterrupt, SystemExit):
         sys.exit()
+
+# if __name__ == '__main__':
+#     om = OrderManager()
+#     instrement = om.exchange.get_instrument()
+#     print(instrement)
+#     print(cost(instrement, 20, 6338.5))
+# print(margin(instrement, 20, 6338.5))

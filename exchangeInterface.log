@@ -1,175 +1,214 @@
-2018-11-05 23:24:40,036 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:173] - INFO: Using symbol BTC/USD.
-2018-11-05 23:24:40,038 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:174] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-05 23:24:42,522 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:50] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-05 23:24:52,523 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:201] - INFO: 当前 XBT 钱包: 0.009870
-2018-11-05 23:24:52,523 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:202] - INFO: 当前仓位: -100
-2018-11-05 23:24:52,523 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 平均成本价格: 6407
-2018-11-05 23:24:52,524 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:207] - INFO: 平均买入价格: 6407
-2018-11-05 23:24:52,524 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:208] - INFO: 当前合约交易: 0
-2018-11-05 23:24:56,530 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:209] - INFO: Delta值: -0.0156 XBT
-2018-11-05 23:25:04,594 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:201] - INFO: 当前 XBT 钱包: 0.009866
-2018-11-05 23:25:04,594 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:202] - INFO: 当前仓位: -100
-2018-11-05 23:25:04,595 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 平均成本价格: 6407
-2018-11-05 23:25:04,595 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:207] - INFO: 平均买入价格: 6407
-2018-11-05 23:25:04,595 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:208] - INFO: 当前合约交易: 0
-2018-11-05 23:25:08,590 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:209] - INFO: Delta值: -0.0156 XBT
-2018-11-05 23:30:16,241 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:201] - INFO: 当前 XBT 钱包: 0.009898
-2018-11-05 23:30:16,242 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:202] - INFO: 当前仓位: -100
-2018-11-05 23:30:16,243 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 平均成本价格: 6407
-2018-11-05 23:30:16,243 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:207] - INFO: 平均买入价格: 6407
-2018-11-05 23:30:16,243 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:208] - INFO: 当前合约交易: 0
-2018-11-05 23:30:19,594 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:209] - INFO: Delta值: -0.0156 XBT
-2018-11-05 23:33:27,810 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:232] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-05 23:33:27,810 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:50] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-05 23:33:44,232 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:265] - INFO: BitMEX Market Maker Version: v1.1
-
-2018-11-05 23:33:48,465 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:174] - INFO: Using symbol BTC/USD.
-2018-11-05 23:33:48,466 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:175] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-05 23:33:51,026 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:51] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-05 23:33:56,981 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:232] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-05 23:33:56,981 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:51] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:10:48,805 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:10:48,807 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:10:51,289 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:11:01,312 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009840
-2018-11-06 23:11:01,313 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:11:01,313 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:11:01,313 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:11:01,313 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:11:06,751 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:11:21,383 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009840
-2018-11-06 23:11:21,384 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:11:21,384 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:11:21,384 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:11:21,385 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:11:25,486 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:11:25,490 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:11:25,490 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:14:22,197 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:14:22,198 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:14:24,719 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:14:34,820 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009839
-2018-11-06 23:14:34,821 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:14:34,821 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:14:34,821 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:14:34,821 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:14:38,703 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:14:46,799 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009839
-2018-11-06 23:14:46,799 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:14:46,800 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:14:46,800 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:14:46,800 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:14:50,738 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:15:07,376 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:15:07,377 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:15:55,028 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:15:55,028 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:15:58,168 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:16:07,542 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009837
-2018-11-06 23:16:07,543 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:16:07,543 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:16:07,543 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:16:07,544 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:16:11,545 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:16:19,672 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009837
-2018-11-06 23:16:19,674 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:16:19,675 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:16:19,675 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:16:19,675 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:16:23,647 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:16:26,709 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:16:26,709 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:16:50,854 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:16:50,854 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:16:53,353 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:17:03,364 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009837
-2018-11-06 23:17:03,364 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:17:03,364 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:17:03,365 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:17:03,365 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:17:07,908 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:17:15,390 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009837
-2018-11-06 23:17:15,391 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:17:15,391 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:17:15,391 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:17:15,391 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:17:19,470 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:18:40,577 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:18:40,577 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:18:49,199 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:18:49,200 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:18:51,732 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:19:02,485 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009833
-2018-11-06 23:19:02,486 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:19:02,486 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:19:02,486 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:19:02,486 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:19:05,764 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:19:13,698 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009833
-2018-11-06 23:19:13,698 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:19:13,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:19:13,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:19:13,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:19:17,710 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:21:28,035 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Using symbol BTC/USD.
-2018-11-06 23:21:28,035 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:178] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:21:30,524 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:21:40,591 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前 XBT 钱包: 0.009833
-2018-11-06 23:21:40,592 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 当前仓位: -100
-2018-11-06 23:21:40,592 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均成本价格: 6407
-2018-11-06 23:21:40,592 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 平均买入价格: 6407
-2018-11-06 23:21:40,592 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: 当前合约交易: 0
-2018-11-06 23:21:44,542 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:216] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:21:52,672 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前 XBT 钱包: 0.009833
-2018-11-06 23:21:52,673 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 当前仓位: -100
-2018-11-06 23:21:52,673 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均成本价格: 6407
-2018-11-06 23:21:52,673 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 平均买入价格: 6407
-2018-11-06 23:21:52,674 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: 当前合约交易: 0
-2018-11-06 23:21:56,554 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:216] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:21:56,557 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:238] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:21:56,558 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:22:35,196 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Using symbol BTC/USD.
-2018-11-06 23:22:35,197 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:178] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:22:37,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:22:47,706 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前 XBT 钱包: 0.009832
-2018-11-06 23:22:47,706 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 当前仓位: -100
-2018-11-06 23:22:47,706 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均成本价格: 6407
-2018-11-06 23:22:47,706 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 平均买入价格: 6407
-2018-11-06 23:22:47,706 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: 当前合约交易: 0
-2018-11-06 23:22:51,856 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:216] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:22:59,698 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前 XBT 钱包: 0.009832
-2018-11-06 23:22:59,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:206] - INFO: 当前仓位: -100
-2018-11-06 23:22:59,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均成本价格: 6407
-2018-11-06 23:22:59,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 平均买入价格: 6407
-2018-11-06 23:22:59,699 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: 当前合约交易: 0
-2018-11-06 23:23:03,718 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:216] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:23:03,719 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:32] - INFO: 请求 None
-2018-11-06 23:25:04,333 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009830
-2018-11-06 23:25:04,334 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:25:04,336 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:25:04,338 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:25:04,340 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:25:08,371 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:26:50,849 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
-2018-11-06 23:26:50,849 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
-2018-11-06 23:26:56,095 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:27:04,730 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009828
-2018-11-06 23:27:04,731 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:27:04,731 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:27:04,731 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:27:04,732 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:27:08,725 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:27:16,734 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009828
-2018-11-06 23:27:16,734 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: -100
-2018-11-06 23:27:16,734 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 平均成本价格: 6407
-2018-11-06 23:27:16,734 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 平均买入价格: 6407
-2018-11-06 23:27:16,735 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
-2018-11-06 23:27:20,703 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: -0.0156 XBT
-2018-11-06 23:28:51,829 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:28:51,830 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:28:51,862 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:238] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:28:51,862 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:28:51,893 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
-2018-11-06 23:28:51,893 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
-2018-11-06 23:28:54,536 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:241] - INFO: Unable to cancel orders: bitmex {"error":{"message":"Nonce is not increasing. This nonce: 1541518131830, last nonce: 1541518131894","name":"HTTPError"}}
-2018-11-06 23:28:54,979 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: Unable to cancel orders: bitmex {"error":{"message":"Nonce is not increasing. This nonce: 1541518131863, last nonce: 1541518131894","name":"HTTPError"}}
+2018-11-10 13:29:21,318 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
+2018-11-10 13:29:21,320 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:29:34,273 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:29:36,217 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:39] - INFO: Canceling: buy 10.0 BTC/USD 6000.0
+2018-11-10 13:29:46,754 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:29:46,754 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:29:46,755 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:29:50,749 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 13:32:07,847 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
+2018-11-10 13:32:07,847 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:32:10,230 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:32:20,334 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:32:20,335 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:32:20,335 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:32:24,358 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 13:35:52,538 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol XRPZ18.
+2018-11-10 13:35:52,538 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:35:54,988 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:36:05,023 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:36:05,023 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:36:05,023 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:36:07,644 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 13:36:07,645 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:36:24,506 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol XRPZ18.
+2018-11-10 13:36:24,507 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:36:27,756 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:36:40,000 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol XRPZ18.
+2018-11-10 13:36:40,001 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:36:42,431 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:36:44,800 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 13:36:44,801 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:36:56,074 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol XRPZ18.
+2018-11-10 13:36:56,075 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:36:58,576 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:37:08,460 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:37:08,461 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:37:08,461 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:37:11,797 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:237] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 13:37:11,800 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:37:44,321 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol XRPZ18.
+2018-11-10 13:37:44,322 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:37:46,779 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:37:56,732 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:37:56,733 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:37:56,733 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:38:00,727 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 13:44:57,089 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
+2018-11-10 13:44:57,090 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:44:59,541 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:45:09,558 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:45:09,559 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:45:09,559 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:45:13,671 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 13:53:29,961 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
+2018-11-10 13:53:29,961 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 13:53:32,461 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 13:53:42,704 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 13:53:42,704 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 13:53:42,705 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 13:53:46,515 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 14:02:52,909 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:176] - INFO: Using symbol BTC/USD.
+2018-11-10 14:02:52,910 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:177] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 14:02:55,370 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:53] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 14:03:05,387 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009829
+2018-11-10 14:03:05,387 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:205] - INFO: 当前仓位: 0
+2018-11-10 14:03:05,387 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:214] - INFO: 当前合约交易: 0
+2018-11-10 14:03:09,390 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:215] - INFO: Delta值: 0.0000 XBT
+2018-11-10 20:56:53,474 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:183] - INFO: Using symbol BTC/USD.
+2018-11-10 20:56:53,475 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 20:56:56,096 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 20:57:06,062 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-10 20:57:06,062 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 10
+2018-11-10 20:57:06,063 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 平均成本价格: 6342
+2018-11-10 20:57:06,063 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 平均买入价格: 6342
+2018-11-10 20:57:06,063 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 20:57:10,013 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0016 XBT
+2018-11-10 20:57:18,092 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-10 20:57:18,092 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 10
+2018-11-10 20:57:18,093 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 平均成本价格: 6342
+2018-11-10 20:57:18,094 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 平均买入价格: 6342
+2018-11-10 20:57:18,095 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 20:57:22,027 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0016 XBT
+2018-11-10 21:38:24,245 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:244] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 21:38:24,249 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 21:38:35,684 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:183] - INFO: Using symbol BTC/USD.
+2018-11-10 21:38:35,684 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 21:38:38,276 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 21:38:48,284 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-10 21:38:48,284 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 10
+2018-11-10 21:38:48,284 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 平均成本价格: 6342
+2018-11-10 21:38:48,285 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 平均买入价格: 6342
+2018-11-10 21:38:48,285 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 21:38:52,307 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0016 XBT
+2018-11-10 21:39:00,278 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-10 21:39:00,278 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 10
+2018-11-10 21:39:00,278 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 平均成本价格: 6342
+2018-11-10 21:39:00,279 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 平均买入价格: 6342
+2018-11-10 21:39:00,279 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 21:39:05,552 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0016 XBT
+2018-11-10 21:40:16,688 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:244] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 21:40:16,689 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 21:40:26,489 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:183] - INFO: Using symbol BTC/USD.
+2018-11-10 21:40:26,489 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 21:40:29,077 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 21:40:38,996 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009826
+2018-11-10 21:40:38,996 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 0
+2018-11-10 21:40:38,997 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 21:40:43,061 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0000 XBT
+2018-11-10 21:40:51,066 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: 当前 XBT 钱包: 0.009826
+2018-11-10 21:40:51,066 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: 当前仓位: 0
+2018-11-10 21:40:51,066 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: 当前合约交易: 0
+2018-11-10 21:40:55,070 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:222] - INFO: Delta值: 0.0000 XBT
+2018-11-10 22:08:57,906 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:244] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-10 22:08:57,912 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 23:33:30,274 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:183] - INFO: Using symbol BTC/USD.
+2018-11-10 23:33:30,276 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-10 23:33:32,769 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-10 23:33:38,765 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009826
+2018-11-10 23:33:40,778 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:208] - INFO: 当前仓位: 0
+2018-11-10 23:33:42,781 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 当前合约交易: 0
+2018-11-10 23:33:46,782 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: Delta值: 0.0000 XBT
+2018-11-10 23:33:50,780 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:204] - INFO: 当前 XBT 钱包: 0.009826
+2018-11-10 23:33:52,796 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:208] - INFO: 当前仓位: 0
+2018-11-10 23:33:54,790 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:220] - INFO: 当前合约交易: 0
+2018-11-10 23:33:58,911 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:221] - INFO: Delta值: 0.0000 XBT
+2018-11-11 00:24:33,576 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:24:33,579 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:24:43,498 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Using symbol BTC/USD.
+2018-11-11 00:24:43,498 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:185] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:24:43,498 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:195] - INFO: Reset status
+2018-11-11 00:24:43,498 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:24:50,027 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-11 00:24:52,000 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 当前仓位: -10
+2018-11-11 00:24:52,000 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:226] - INFO: 平均成本价格: 6364
+2018-11-11 00:24:52,001 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:227] - INFO: 平均买入价格: 6364
+2018-11-11 00:25:00,079 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-11 00:25:02,519 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 当前仓位: -10
+2018-11-11 00:25:02,521 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:226] - INFO: 平均成本价格: 6364
+2018-11-11 00:25:02,522 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:227] - INFO: 平均买入价格: 6364
+2018-11-11 00:25:18,492 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:250] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:25:18,496 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:26:55,335 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:184] - INFO: Using symbol BTC/USD.
+2018-11-11 00:26:55,336 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:185] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:26:55,337 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:195] - INFO: Reset status
+2018-11-11 00:26:55,339 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:27:01,861 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: 当前 XBT 钱包: 0.009825
+2018-11-11 00:27:03,965 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:219] - INFO: 当前仓位: -10
+2018-11-11 00:27:03,967 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:226] - INFO: 平均成本价格: 6364
+2018-11-11 00:27:03,968 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:227] - INFO: 平均买入价格: 6364
+2018-11-11 00:36:35,217 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:250] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:36:35,217 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:52:34,731 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:195] - INFO: Using symbol BTC/USD.
+2018-11-11 00:52:34,733 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:196] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:52:34,733 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:207] - INFO: Reset status
+2018-11-11 00:52:34,733 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:52:41,443 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:225] - INFO: 当前 XBT 钱包: 0.009822
+2018-11-11 00:52:43,342 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:231] - INFO: 当前仓位: 0
+2018-11-11 00:52:47,257 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:261] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:52:47,257 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:53:52,038 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:199] - INFO: Using symbol BTC/USD.
+2018-11-11 00:53:52,040 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:200] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:53:52,040 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: Reset status
+2018-11-11 00:53:52,040 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:53:58,570 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009822
+2018-11-11 00:54:00,617 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 0
+2018-11-11 00:54:36,408 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009808
+2018-11-11 00:54:38,545 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 62
+2018-11-11 00:54:38,546 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: 平均成本价格: 6373
+2018-11-11 00:54:38,548 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: 平均买入价格: 6373
+2018-11-11 00:56:50,936 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:199] - INFO: Using symbol BTC/USD.
+2018-11-11 00:56:50,937 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:200] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:56:50,938 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: Reset status
+2018-11-11 00:56:50,938 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:56:51,434 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:40] - INFO: Canceling: sell 62.0 BTC/USD 6376.0
+2018-11-11 00:57:00,050 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009808
+2018-11-11 00:57:01,987 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 62
+2018-11-11 00:57:01,987 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: 平均成本价格: 6373
+2018-11-11 00:57:01,988 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: 平均买入价格: 6373
+2018-11-11 00:57:12,026 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009808
+2018-11-11 00:57:14,069 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 62
+2018-11-11 00:57:14,069 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: 平均成本价格: 6373
+2018-11-11 00:57:14,070 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: 平均买入价格: 6373
+2018-11-11 00:57:42,099 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:265] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:57:42,101 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:57:42,151 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:265] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:57:42,152 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:57:44,200 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:269] - INFO: Unable to cancel orders: bitmex {"error":{"message":"Nonce is not increasing. This nonce: 1541869062105, last nonce: 1541869062152","name":"HTTPError"}}
+2018-11-11 00:58:51,149 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:199] - INFO: Using symbol BTC/USD.
+2018-11-11 00:58:51,151 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:200] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 00:58:51,152 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: Reset status
+2018-11-11 00:58:51,152 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 00:58:57,654 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009808
+2018-11-11 00:59:00,189 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 0
+2018-11-11 00:59:40,702 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009793
+2018-11-11 00:59:42,594 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 62
+2018-11-11 00:59:42,596 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: 平均成本价格: 6374
+2018-11-11 00:59:42,597 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: 平均买入价格: 6374
+2018-11-11 00:59:47,009 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:265] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 00:59:47,010 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 01:37:00,493 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:199] - INFO: Using symbol BTC/USD.
+2018-11-11 01:37:00,495 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:200] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-11 01:37:00,496 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: Reset status
+2018-11-11 01:37:00,496 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-11 01:37:06,993 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009805
+2018-11-11 01:37:08,993 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 0
+2018-11-11 01:37:13,084 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:86] - DEBUG: 杠杆满仓 625.0668374999999
+2018-11-11 01:37:15,043 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:97] - DEBUG: 开仓 {'info': {'orderID': '777a80c5-89e2-d385-7262-f402d82d92c1', 'clOrdID': '', 'clOrdLinkID': '', 'account': 142422, 'symbol': 'XBTUSD', 'side': 'Buy', 'simpleOrderQty': None, 'orderQty': 62, 'price': 6375, 'displayQty': None, 'stopPx': None, 'pegOffsetValue': None, 'pegPriceType': '', 'currency': 'USD', 'settlCurrency': 'XBt', 'ordType': 'Limit', 'timeInForce': 'GoodTillCancel', 'execInst': '', 'contingencyType': '', 'exDestination': 'XBME', 'ordStatus': 'Filled', 'triggered': '', 'workingIndicator': False, 'ordRejReason': '', 'simpleLeavesQty': None, 'leavesQty': 0, 'simpleCumQty': None, 'cumQty': 62, 'avgPx': 6375, 'multiLegReportingType': 'SingleSecurity', 'text': 'Submitted via API.', 'transactTime': '2018-11-10T17:37:14.864Z', 'timestamp': '2018-11-10T17:37:14.864Z'}, 'id': '777a80c5-89e2-d385-7262-f402d82d92c1', 'timestamp': 1541871434864, 'datetime': '2018-11-10T17:37:14.864Z', 'lastTradeTimestamp': 1541871434864, 'symbol': 'BTC/USD', 'type': 'limit', 'side': 'buy', 'price': 6375.0, 'amount': 62.0, 'cost': 395250.0, 'filled': 62.0, 'remaining': 0.0, 'status': 'Filled', 'fee': None}
+2018-11-11 01:37:21,013 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:229] - INFO: 当前 XBT 钱包: 0.009789
+2018-11-11 01:37:23,119 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:235] - INFO: 当前仓位: 62
+2018-11-11 01:37:23,119 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: 平均成本价格: 6375
+2018-11-11 01:37:23,119 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:243] - INFO: 平均买入价格: 6375
+2018-11-11 01:37:27,110 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:86] - DEBUG: 杠杆满仓 562.0907625
+2018-11-11 01:37:34,032 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:265] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-11 01:37:34,032 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:54] - INFO: Resetting current position. Canceling all existing orders.

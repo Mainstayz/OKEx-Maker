@@ -66,7 +66,7 @@ class Bitmex:
         responder = self._curl(query, 'publicGetInstrument')
         return responder[0] if responder and len(responder) > 0 else None
 
-    def fetch_ohlc(self, symbol, timeframe='15Min',limit=576):
+    def fetch_ohlc(self, symbol, timeframe='15Min', limit=576):
         # 两天前
         ohloc_data = self.client.fetch_ohlcv(symbol, '5m', limit=limit, params={'reverse': True})
         df = pd.DataFrame(data=ohloc_data, columns=['date', 'open', 'high', 'low', 'close', 'volume'])
@@ -121,10 +121,20 @@ class Bitmex:
     def cancel_order(self, order_id=None):
         return self.client.cancel_order(id=order_id)
 
+    @authentication_required
+    def create_limit_buy_order(self, symbol, amount, price):
+        return self.client.create_order(symbol=symbol, type='limit', side='buy', amount=amount, price=price)
+
+    @authentication_required
+    def create_limit_sell_order(self, symbol, amount, price):
+        return self.client.create_order(symbol=symbol, type='limit', side='sell', amount=amount, price=price)
+
 
 if __name__ == '__main__':
+    pass
     access = TOKEN['test']
     bitmex = Bitmex(api_key=access['apiKey'], secret=access['secret'], enable_proxy=True, test=True)
+
     # print(bitmex.delta('XBTUSD'))
     # print(bitmex.isolate_margin('XBTUSD', 5))
     # print(bitmex.instrument('XBTUSD'))
@@ -133,6 +143,20 @@ if __name__ == '__main__':
     # print(bitmex.funds())
     # print(bitmex.position('BTC/USD'))
     # print(bitmex.cancel_order('77b5bfe7-9b7b-25da-4734-e7cb23e2cd0c'))
-    result = bitmex.fetch_ohlc('BTC/USD')
-    print(result)
 
+    # result = bitmex.free_funds()
+    # leverage = 5
+    # rick = result * 5
+    # bitPrice = bitmex.client.fetch_ticker('BTC/USD')['last']
+    # pos = bitPrice * rick
+    # print(pos)
+
+    #  0.00889511 * 5 = 0.0413198 总用可用的XBT
+    # 6344.5 * 0.0413198 = 262.1534711
+
+    # 买单
+    # responder = bitmex.client.create_order(symbol='BTC/USD', type='limit', side='buy', amount=10, price=6345.0)
+
+    # print(responder)
+
+    # bitmex.create_limit_sell_order('BTC/USD', 20, 6338.5)
