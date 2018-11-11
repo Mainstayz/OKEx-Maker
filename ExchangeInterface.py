@@ -3,6 +3,7 @@ import sys
 import atexit
 import signal
 import constants
+import csv
 from datetime import datetime
 from os.path import getmtime
 from time import sleep
@@ -314,6 +315,33 @@ def quantity(mult, btc, price):
     P = mult * price if mult >= 0 else mult / price
     xbt = XBT_to_XBt(btc)
     return abs(xbt / P)
+
+
+def save_order_record(order={}):
+    file = 'order.csv'
+    is_exist = os.path.isfile(file)
+    with open(file, "a") as csvFile:
+        writer = csv.DictWriter(csvFile, list(order.keys()))
+        if is_exist == False:
+            writer.writeheader()
+            writer.writerow(order)
+        csvFile.close()
+
+
+def last_order_record():
+    file = 'order.csv'
+    is_exist = os.path.isfile(file)
+    if is_exist == False:
+        return None
+
+    order = None
+    with open(file, "r") as csvFile:
+        reader = csv.DictReader(csvFile)
+        for record in reader:
+            pass
+        order = dict(record)
+        csvFile.close()
+    return order
 
 
 def run():

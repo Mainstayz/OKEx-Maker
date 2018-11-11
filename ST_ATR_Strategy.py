@@ -88,26 +88,51 @@ class CustomOrderManager(OrderManager):
         # 如果空仓
         if position == 0:
             # 获取 1/10 层仓位
-            amount = int(amount / 10)
+            amount = int(amount * 0.9)
             # 如是是空信号
             if signal == 'down':
                 amount = amount * -1
 
             order = self.exchange.create_limit_order(amount=amount, price=price)
             log.logger.debug('开仓 %s' % order)
-            # {'info': {'orderID': '5adafb11-3def-42cf-08ad-362c358410f7', 'clOrdID': '', 'clOrdLinkID': '', 'account': 142422, 'symbol': 'XBTUSD', 'side': 'Buy', 'simpleOrderQty': None, 'orderQty': 62, 'price': 6374, 'displayQty': None, 'stopPx': None, 'pegOffsetValue': None, 'pegPriceType': '', 'currency': 'USD', 'settlCurrency': 'XBt', 'ordType': 'Limit', 'timeInForce': 'GoodTillCancel', 'execInst': '', 'contingencyType': '', 'exDestination': 'XBME', 'ordStatus': 'Filled', 'triggered': '', 'workingIndicator': False, 'ordRejReason': '', 'simpleLeavesQty': None, 'leavesQty': 0, 'simpleCumQty': None, 'cumQty': 62, 'avgPx': 6374, 'multiLegReportingType': 'SingleSecurity', 'text': 'Submitted via API.', 'transactTime': '2018-11-10T16:59:09.239Z', 'timestamp': '2018-11-10T16:59:09.239Z'}, 'id': '5adafb11-3def-42cf-08ad-362c358410f7', 'timestamp': 1541869149239, 'datetime': '2018-11-10T16:59:09.239Z', 'lastTradeTimestamp': 1541869149239, 'symbol': 'BTC/USD', 'type': 'limit', 'side': 'buy', 'price': 6374.0, 'amount': 62.0, 'cost': 395188.0, 'filled': 62.0, 'remaining': 0.0, 'status': 'Filled', 'fee': None}
             # 入库
-            # 机器人发短信
+            #
+            order.pop('info')
+            # 添加数据库
+            save_order_record(order)
             if order['remaining'] != 0:
                 log.logger.warning('开启子线程检查订单状态')
                 pass
 
         # 如果持有多仓
         elif position > 0:
-
+            if signal == 'down':
+                position = 2 * position
+                order = self.exchange.create_limit_order(amount=-position, price=price)
+                log.logger.debug('开空仓 %s' % order)
+                # 入库
+                #
+                order.pop('info')
+                # 添加数据库
+                save_order_record(order)
+                if order['remaining'] != 0:
+                    log.logger.warning('开启子线程检查订单状态')
+                    pass
             pass
         # 如果持有空仓
         elif position < 0:
+            if signal == 'up':
+                position = 2 * position
+                order = self.exchange.create_limit_order(amount=-position, price=price)
+                log.logger.debug('开多仓 %s' % order)
+                # 入库
+                #
+                order.pop('info')
+                # 添加数据库
+                save_order_record(order)
+                if order['remaining'] != 0:
+                    log.logger.warning('开启子线程检查订单状态')
+                    pass
             pass
 
 
