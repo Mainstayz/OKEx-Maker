@@ -18,8 +18,8 @@
   "time_frame": "15m",
   "strategies": {
     "STA": {
-      "period": 7,
-      "multiplier": 3
+      "period": 30,
+      "multiplier": 5
     }
   }
 }

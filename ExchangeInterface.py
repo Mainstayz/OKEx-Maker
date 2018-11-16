@@ -51,12 +51,10 @@ class ExchangeInterface:
                 break
 
     def cancel_all_orders(self):
-
         log.logger.info("Resetting current position. Canceling all existing orders.")
         # In certain cases, a WS update might not make it through before we call this.
         # For that reason, we grab via HTTP to ensure we grab them all.
         orders = self.get_orders()
-
         for order in orders:
             self.cancel_order(order)
 
@@ -136,8 +134,18 @@ class ExchangeInterface:
     def get_margin(self):
         return self.bitmex.funds()
 
-    def get_orders(self):
-        return self.bitmex.open_orders()
+    def get_orders(self, symbol=None):
+        if symbol is None:
+            symbol = self.symbol
+        return self.bitmex.open_orders(symbol=symbol)
+
+    def get_order_book(self, symbol=None):
+        if symbol is None:
+            symbol = self.symbol
+        return self.bitmex.fetch_order_book(symbol=symbol);
+
+    def edit_order(self, id, amount=None, price=None, params={}):
+        return self.bitmex.edit_order(id=id, amount=amount, price=price, params=params)
 
     def get_highest_buy(self):
         buys = [o for o in self.get_orders() if o['side'] == 'buy']
@@ -266,6 +274,7 @@ class OrderManager:
         log.logger.info("Shutting down. All open orders will be cancelled.")
         try:
             self.exchange.cancel_all_orders()
+            pass
         except Exception as e:
             log.logger.info("Unable to cancel orders: %s" % e)
         sys.exit()
@@ -318,11 +327,12 @@ def quantity(mult, btc, price):
 
 
 def save_order_record(order={}):
+    order.pop('info')
     file = 'order.csv'
     is_exist = os.path.isfile(file)
     with open(file, "a") as csvFile:
         writer = csv.DictWriter(csvFile, list(order.keys()))
-        if is_exist == False:
+        if not is_exist:
             writer.writeheader()
             writer.writerow(order)
         csvFile.close()
@@ -331,7 +341,7 @@ def save_order_record(order={}):
 def last_order_record():
     file = 'order.csv'
     is_exist = os.path.isfile(file)
-    if is_exist == False:
+    if not is_exist:
         return None
 
     order = None

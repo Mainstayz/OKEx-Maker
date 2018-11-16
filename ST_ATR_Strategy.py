@@ -2,6 +2,9 @@ import sys
 import pandas as pd
 import numpy as np
 import talib
+import threading
+import time
+
 from ExchangeInterface import *
 
 
@@ -63,7 +66,62 @@ def super_trend_atr(df, period, multiplier):
 
 class CustomOrderManager(OrderManager):
 
+    def check_orders(self):
+
+        # 等待时间
+        wait_time = 120
+
+        # 每次等待时间
+        wait_duration = 10
+
+        order_list = []
+
+        while True:
+            log.logger.info('检查订单状态...count down: %s S' % wait_time)
+
+            # 暂停
+            time.sleep(wait_duration)
+            # 查询订单信息
+            order_list = self.exchange.get_orders()
+            if len(order_list) > 0:
+                log.logger.info('订单: %s ' % order_list[0])
+                # 如果一直有订单信息
+                wait_time = wait_time - wait_duration
+                if wait_time <= 0:
+                    break
+            else:
+                break
+
+        # 如果 120秒 委托还无法成交
+        if len(order_list) > 0:
+            for order in order_list:
+
+                symbol = order['symbol']
+                order_book = self.exchange.get_order_book(symbol)
+                if order['side'] == 'buy':
+                    last_price = order_book['asks'][0][0] if len(order_book['asks']) > 0 else None
+                else:
+                    last_price = order_book['bids'][0][0] if len(order_book['bids']) > 0 else None
+
+                order_id = order['id']
+
+                edited_order = self.exchange.edit_order(order_id, price=last_price)
+                log.logger.info('Fix订单: %s ' % edited_order)
+                # save!!
+                save_order_record(edited_order)
+                # 如果依旧无法成交
+                if edited_order['remaining'] > 0:
+                    return self.check_orders()
+
+        return None
+
+    def start_check_orders(self):
+        t = threading.Thread(target=self.check_orders, name='Check_Orders_Thread')
+        t.start()
+        pass
+
     def place_orders(self):
+
         data = self.exchange.get_ohlc()
 
         conf = settings.strategies['STA']
@@ -74,7 +132,7 @@ class CustomOrderManager(OrderManager):
         # 获取仓位
         position = self.position['currentQty']
         # 获取BTC
-        free_btc = self.exchange.bitmex.free_funds()
+        total_btc = self.exchange.bitmex.total_funds()
         # 杠杆
         leverage = self.position['leverage']
 
@@ -82,7 +140,7 @@ class CustomOrderManager(OrderManager):
         price = self.instrument['lastPrice']
         mult = self.instrument["multiplier"]
 
-        amount = quantity(mult, free_btc * leverage, price)
+        amount = quantity(mult, total_btc * leverage, price)
         log.logger.debug('杠杆满仓 %s' % amount)
 
         # 如果空仓
@@ -95,45 +153,34 @@ class CustomOrderManager(OrderManager):
 
             order = self.exchange.create_limit_order(amount=amount, price=price)
             log.logger.debug('开仓 %s' % order)
-            # 入库
-            #
-            order.pop('info')
-            # 添加数据库
+            # save!!
             save_order_record(order)
-            if order['remaining'] != 0:
-                log.logger.warning('开启子线程检查订单状态')
-                pass
+            self.start_check_orders()
+
 
         # 如果持有多仓
         elif position > 0:
+            # 做空
             if signal == 'down':
-                position = 2 * position
+                # 平仓加开仓
+                position = abs(position) + int(amount * 0.9)
                 order = self.exchange.create_limit_order(amount=-position, price=price)
-                log.logger.debug('开空仓 %s' % order)
-                # 入库
-                #
-                order.pop('info')
+                log.logger.debug('做空 %s' % order)
                 # 添加数据库
                 save_order_record(order)
-                if order['remaining'] != 0:
-                    log.logger.warning('开启子线程检查订单状态')
-                    pass
+                self.start_check_orders()
+
             pass
         # 如果持有空仓
         elif position < 0:
             if signal == 'up':
-                position = 2 * position
-                order = self.exchange.create_limit_order(amount=-position, price=price)
-                log.logger.debug('开多仓 %s' % order)
-                # 入库
-                #
-                order.pop('info')
+                position = abs(position) + int(amount * 0.9)
+                order = self.exchange.create_limit_order(amount=position, price=price)
+                log.logger.debug('做多 %s' % order)
                 # 添加数据库
                 save_order_record(order)
-                if order['remaining'] != 0:
-                    log.logger.warning('开启子线程检查订单状态')
-                    pass
-            pass
+                self.start_check_orders()
+        pass
 
 
 def run() -> None:

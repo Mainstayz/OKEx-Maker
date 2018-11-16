@@ -53,6 +53,19 @@ class Bitmex:
         else:
             return res
 
+    def fetch_order_book(self, symbol, limit=10, params={}):
+        return self.client.fetch_order_book(symbol=symbol, limit=limit, params=params)
+
+    # orderbook = okex.fetch_order_book('EOS/USDT', limit=10)
+
+    # obj = okexChanged.load_fees()
+    # print(client.exchange.fetch_tickers())
+    # 买1价
+    # bid = orderbook['bids'][0][0] if len(orderbook['bids']) > 0 else None
+
+    # 卖1价
+    # ask = orderbook['asks'][0][0] if len(orderbook['asks']) > 0 else None
+
     def ticker_data(self, symbol):
         return self.client.fetch_ticker(symbol)
 
@@ -129,12 +142,18 @@ class Bitmex:
     def create_limit_sell_order(self, symbol, amount, price):
         return self.client.create_order(symbol=symbol, type='limit', side='sell', amount=amount, price=price)
 
+    @authentication_required
+    def edit_order(self, id, amount=None, price=None, params={}):
+        return self.client.edit_order(id=id, symbol=None, type=None, side=None, amount=amount, price=price,
+                                      params=params)
+
 
 if __name__ == '__main__':
     pass
     access = TOKEN['test']
     bitmex = Bitmex(api_key=access['apiKey'], secret=access['secret'], enable_proxy=True, test=True)
-
+    orders = bitmex.open_orders('BTC/USD')
+    print(orders)
     # print(bitmex.delta('XBTUSD'))
     # print(bitmex.isolate_margin('XBTUSD', 5))
     # print(bitmex.instrument('XBTUSD'))
