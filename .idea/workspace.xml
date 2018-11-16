@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/maker$bitmex_ccxt.coverage" NAME="bitmex_ccxt Coverage Results" MODIFIED="1542364752990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/maker$bitmex_ccxt.coverage" NAME="bitmex_ccxt Coverage Results" MODIFIED="1542365355597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$ST_ATR_Strategy.coverage" NAME="ST_ATR_Strategy Coverage Results" MODIFIED="1542363720569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$bot.coverage" NAME="bot Coverage Results" MODIFIED="1541004807086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/maker$ExchangeInterface.coverage" NAME="ExchangeInterface Coverage Results" MODIFIED="1542355878001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -62,8 +62,8 @@
       <file leaf-file-name="bitmex_ccxt.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitmex_ccxt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            <state relative-caret-position="164">
+              <caret line="49" column="64" lean-forward="true" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -440,7 +440,7 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bitmex_ccxt.py</url>
           <line>50</line>
-          <option name="timeStamp" value="68" />
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -454,7 +454,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="69" />
+      <option name="time" value="70" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -831,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitmex_ccxt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state relative-caret-position="164">
+          <caret line="49" column="64" lean-forward="true" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
