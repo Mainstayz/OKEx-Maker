@@ -47,7 +47,7 @@ class Bitmex:
 
     def _curl(self, data, method_name):
         try:
-            res = eval(f"self.client.{method_name}(data)")
+            res = eval(f'self.client.{method_name}(data)')
         except Exception as e:
             print(e)
         else:
@@ -152,11 +152,11 @@ if __name__ == '__main__':
     pass
     access = TOKEN['test']
     bitmex = Bitmex(api_key=access['apiKey'], secret=access['secret'], enable_proxy=True, test=True)
-    orders = bitmex.open_orders('BTC/USD')
-    print(orders)
+    # orders = bitmex.open_orders('BTC/USD')
+    # print(orders)
     # print(bitmex.delta('XBTUSD'))
     # print(bitmex.isolate_margin('XBTUSD', 5))
-    # print(bitmex.instrument('XBTUSD'))
+    print(bitmex.instrument('BTC/USD'))
     # bitmex.client.load_markets()
     # print(bitmex.client.market_id('BTC/USD'))
     # print(bitmex.funds())
