@@ -28,7 +28,7 @@ class ExchangeInterface:
 
     def __init__(self, symbol):
         self.symbol = symbol
-        self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=True, test=True)
+        self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=settings.enable_proxy, test=settings.test)
 
     def get_ohlc(self, symbol=None, timeframe='15Min', limit=750):
         if symbol is None:

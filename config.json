@@ -1,6 +1,6 @@
 {
-  "running": false,
-  "enable_proxy": true,
+  "running": true,
+  "enable_proxy": false,
   "test": true,
   "api_rest_interval": 1,
   "api_error_interval": 10,
