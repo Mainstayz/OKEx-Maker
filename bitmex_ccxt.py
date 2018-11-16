@@ -47,7 +47,8 @@ class Bitmex:
 
     def _curl(self, data, method_name):
         try:
-            res = eval(f'self.client.{method_name}(data)')
+            exp = f'self.client.{method_name}({data})'
+            res = eval(exp)
         except Exception as e:
             print(e)
         else:
