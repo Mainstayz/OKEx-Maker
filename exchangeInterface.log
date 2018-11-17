@@ -858,3 +858,10 @@
 2018-11-17 14:01:55,044 - /root/OKEx-Maker/ExchangeInterface.py[line:260] - INFO: Avg Entry Price: 5450
 2018-11-17 14:01:58,606 - ST_ATR_Strategy.py[line:142] - INFO: Current leverage 10
 2018-11-17 14:01:58,606 - ST_ATR_Strategy.py[line:150] - INFO: Full position 558.5924409
+2018-11-17 14:07:02,874 - /root/OKEx-Maker/ExchangeInterface.py[line:241] - INFO: Current XBT balance: 0.010112
+2018-11-17 14:07:04,871 - /root/OKEx-Maker/ExchangeInterface.py[line:247] - INFO: Current position: 450
+2018-11-17 14:07:04,871 - /root/OKEx-Maker/ExchangeInterface.py[line:250] - INFO: Current leverage: 10
+2018-11-17 14:07:05,303 - /root/OKEx-Maker/ExchangeInterface.py[line:259] - INFO: Avg Cost Price:: 5450
+2018-11-17 14:07:05,303 - /root/OKEx-Maker/ExchangeInterface.py[line:260] - INFO: Avg Entry Price: 5450
+2018-11-17 14:07:08,875 - ST_ATR_Strategy.py[line:142] - INFO: Current leverage 10
+2018-11-17 14:07:08,876 - ST_ATR_Strategy.py[line:150] - INFO: Full position 553.26877845
