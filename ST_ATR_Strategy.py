@@ -77,14 +77,14 @@ class CustomOrderManager(OrderManager):
         order_list = []
 
         while True:
-            log.logger.info('检查订单状态...count down: %s S' % wait_time)
+            log.logger.info('Check order state...count down: %s S' % wait_time)
 
             # 暂停
             time.sleep(wait_duration)
             # 查询订单信息
             order_list = self.exchange.get_orders()
             if len(order_list) > 0:
-                log.logger.info('订单: %s ' % order_list[0])
+                log.logger.info('Order info: %s ' % order_list[0])
                 # 如果一直有订单信息
                 wait_time = wait_time - wait_duration
                 if wait_time <= 0:
@@ -106,7 +106,7 @@ class CustomOrderManager(OrderManager):
                 order_id = order['id']
 
                 edited_order = self.exchange.edit_order(order_id, price=last_price)
-                log.logger.info('Fix订单: %s ' % edited_order)
+                log.logger.info('Fix order info: %s ' % edited_order)
                 # save!!
                 save_order_record(edited_order)
                 # 如果依旧无法成交
@@ -135,13 +135,15 @@ class CustomOrderManager(OrderManager):
         total_btc = self.exchange.bitmex.total_funds()
         # 杠杆
         leverage = self.position['leverage']
+        log.logger.info('Current leverage %s' % leverage)
 
         # 计算杠杆满仓
         price = self.instrument['lastPrice']
         mult = self.instrument["multiplier"]
 
         amount = quantity(mult, total_btc * leverage, price)
-        log.logger.debug('杠杆满仓 %s' % amount)
+
+        log.logger.info('Full position %s' % amount)
 
         # 如果空仓
         if position == 0:
@@ -152,7 +154,7 @@ class CustomOrderManager(OrderManager):
                 amount = amount * -1
 
             order = self.exchange.create_limit_order(amount=amount, price=price)
-            log.logger.debug('开仓 %s' % order)
+            log.logger.info('Open position: %s' % order)
             # save!!
             save_order_record(order)
             self.start_check_orders()
@@ -165,7 +167,7 @@ class CustomOrderManager(OrderManager):
                 # 平仓加开仓
                 position = abs(position) + int(amount * 0.9)
                 order = self.exchange.create_limit_order(amount=-position, price=price)
-                log.logger.debug('做空 %s' % order)
+                log.logger.info('Make short position: %s' % order)
                 # 添加数据库
                 save_order_record(order)
                 self.start_check_orders()
@@ -176,7 +178,7 @@ class CustomOrderManager(OrderManager):
             if signal == 'up':
                 position = abs(position) + int(amount * 0.9)
                 order = self.exchange.create_limit_order(amount=position, price=price)
-                log.logger.debug('做多 %s' % order)
+                log.logger.info('Make long position: %s' % order)
                 # 添加数据库
                 save_order_record(order)
                 self.start_check_orders()

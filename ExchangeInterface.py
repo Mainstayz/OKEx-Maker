@@ -28,7 +28,8 @@ class ExchangeInterface:
 
     def __init__(self, symbol):
         self.symbol = symbol
-        self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=settings.enable_proxy, test=settings.test)
+        self.bitmex = Bitmex(api_key=settings.api_key, secret=settings.secret, enable_proxy=settings.enable_proxy,
+                             test=settings.test)
 
     def get_ohlc(self, symbol=None, timeframe='15Min', limit=750):
         if symbol is None:
@@ -235,21 +236,21 @@ class OrderManager:
 
         # 获取合约钱包
         self.margin = self.exchange.get_margin()
-        log.logger.info("当前 XBT 钱包: %.6f" % self.margin['BTC']['total'])
+        log.logger.info("Current XBT balance: %.6f" % self.margin['BTC']['total'])
 
         # 获取仓位信息
         self.position = self.exchange.get_position()
 
         running_qty = self.position['currentQty']
-        log.logger.info("当前仓位: %d" % running_qty)
+        log.logger.info("Current position: %d" % running_qty)
 
         # 检查仓位
         # if settings.CHECK_POSITION_LIMITS:
         #     logger.info("Position limits: %d/%d" % (settings.MIN_POSITION, settings.MAX_POSITION))
 
         if running_qty != 0:
-            log.logger.info("平均成本价格: %.f" % (float(self.position['avgCostPrice'])))
-            log.logger.info("平均买入价格: %.f" % (float(self.position['avgEntryPrice'])))
+            log.logger.info("Avg Cost Price:: %.f" % (float(self.position['avgCostPrice'])))
+            log.logger.info("Avg Entry Price: %.f" % (float(self.position['avgEntryPrice'])))
 
     def sanity_check(self):
 
@@ -357,15 +358,7 @@ def last_order_record():
 def run():
     log.logger.info('BitMEX Market Maker Version: %s\n' % constants.VERSION)
     om = OrderManager()
-    # Try/except just keeps ctrl-c from printing an ugly stacktrace
     try:
         om.run_loop()
     except (KeyboardInterrupt, SystemExit):
         sys.exit()
-
-# if __name__ == '__main__':
-#     om = OrderManager()
-#     instrement = om.exchange.get_instrument()
-#     print(instrement)
-#     print(cost(instrement, 20, 6338.5))
-# print(margin(instrement, 20, 6338.5))
