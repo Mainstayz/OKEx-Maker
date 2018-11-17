@@ -40,3 +40,23 @@
 2018-11-17 11:38:51,854 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:57] - INFO: Resetting current position. Canceling all existing orders.
 2018-11-17 11:39:51,042 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:279] - INFO: Shutting down. All open orders will be cancelled.
 2018-11-17 11:39:51,044 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:57] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-17 22:03:25,193 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: Using symbol BTC/USD.
+2018-11-17 22:03:25,194 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:213] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-17 22:03:25,195 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:224] - INFO: Reset status
+2018-11-17 22:03:25,195 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:58] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-17 22:03:31,724 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: Current XBT balance: 0.010112
+2018-11-17 22:03:33,771 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:248] - INFO: Current position: 450
+2018-11-17 22:03:33,772 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:251] - INFO: Current leverage: 10
+2018-11-17 22:03:33,772 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:261] - INFO: Avg cost price: 5450
+2018-11-17 22:03:33,772 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:262] - INFO: Avg entry price: 5450
+2018-11-17 22:03:38,394 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:142] - INFO: Current leverage 10
+2018-11-17 22:03:38,394 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:150] - INFO: Full position 553.3193376
+2018-11-17 22:03:44,423 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:242] - INFO: Current XBT balance: 0.010112
+2018-11-17 22:03:46,475 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:248] - INFO: Current position: 450
+2018-11-17 22:03:46,476 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:251] - INFO: Current leverage: 10
+2018-11-17 22:03:46,476 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:261] - INFO: Avg cost price: 5450
+2018-11-17 22:03:46,476 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:262] - INFO: Avg entry price: 5450
+2018-11-17 22:03:52,205 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:142] - INFO: Current leverage 10
+2018-11-17 22:03:52,205 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:150] - INFO: Full position 553.3193376
+2018-11-17 22:04:28,518 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:292] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-17 22:04:28,519 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:58] - INFO: Resetting current position. Canceling all existing orders.

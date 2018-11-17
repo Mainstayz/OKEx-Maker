@@ -11,6 +11,7 @@ from log import Logger
 from bitmex_ccxt import Bitmex
 from config import Config
 from RestBot import *
+from retrying import retry
 
 # log
 log = Logger('exchangeInterface.log', level='debug')
@@ -242,22 +243,32 @@ class OrderManager:
 
         # 获取仓位信息
         self.position = self.exchange.get_position()
-        running_qty = self.position['currentQty']
 
+        running_qty = self.position['currentQty']
         log.logger.info("Current position: %d" % running_qty)
 
         leverage = self.position['leverage']
         log.logger.info("Current leverage: %d" % leverage)
 
-        pushCommonMessage("Current XBT balance: %.6f, position: %d ." % (self.margin['BTC']['total'], running_qty))
+        # 消息主体
+        push_message = "Current XBT balance: %.6f" % self.margin['BTC']['total']
+        push_message = push_message + "\nPosition: %d" % running_qty
 
         # 检查仓位
         # if settings.CHECK_POSITION_LIMITS:
         #     logger.info("Position limits: %d/%d" % (settings.MIN_POSITION, settings.MAX_POSITION))
 
         if running_qty != 0:
-            log.logger.info("Avg Cost Price:: %.f" % (float(self.position['avgCostPrice'])))
-            log.logger.info("Avg Entry Price: %.f" % (float(self.position['avgEntryPrice'])))
+            log.logger.info("Avg cost price: %.f" % (float(self.position['avgCostPrice'])))
+            log.logger.info("Avg entry price: %.f" % (float(self.position['avgEntryPrice'])))
+
+            push_message = push_message + "\nAvg Cost Price: %.6f" % (float(self.position['avgCostPrice']))
+            push_message = push_message + "\nAvg Entry Price: %.6f" % (float(self.position['avgEntryPrice']))
+
+        last_price = self.instrument['lastPrice']
+        push_message = push_message + '\nLast price: %.6f' % last_price
+
+        pushCommonMessage(push_message)
 
     def sanity_check(self):
 
@@ -362,6 +373,7 @@ def last_order_record():
     return order
 
 
+@retry(stop_max_attempt_number=2)
 def pushOrderInfoMessage(order):
     if order is None:
         return
@@ -376,6 +388,7 @@ def pushOrderInfoMessage(order):
     bot.sendMessage(chat_id=741547351, text=text)
 
 
+@retry(stop_max_attempt_number=2)
 def pushCommonMessage(content):
     bot.sendMessage(chat_id=741547351, text=content)
 
