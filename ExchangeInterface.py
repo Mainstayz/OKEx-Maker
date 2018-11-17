@@ -239,12 +239,18 @@ class OrderManager:
         # 获取合约钱包
         self.margin = self.exchange.get_margin()
         log.logger.info("Current XBT balance: %.6f" % self.margin['BTC']['total'])
+        pushCommonMessage("Current XBT balance: %.6f" % self.margin['BTC']['total'])
 
         # 获取仓位信息
         self.position = self.exchange.get_position()
-
         running_qty = self.position['currentQty']
+        
         log.logger.info("Current position: %d" % running_qty)
+        pushCommonMessage("Current position: %d" % running_qty)
+
+        leverage = self.position['leverage']
+        log.logger.info("Current leverage: %d" % leverage)
+        pushCommonMessage("Current leverage: %d" % leverage)
 
         # 检查仓位
         # if settings.CHECK_POSITION_LIMITS:

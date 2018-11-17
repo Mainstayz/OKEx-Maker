@@ -34,3 +34,9 @@
 2018-11-17 11:16:39,117 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:254] - INFO: Avg Entry Price: 5460
 2018-11-17 11:16:43,114 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:142] - INFO: Current leverage 10
 2018-11-17 11:16:43,114 - /Users/pillar/Documents/maker/ST_ATR_Strategy.py[line:150] - INFO: Full position 525.1739220000001
+2018-11-17 11:38:51,852 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:211] - INFO: Using symbol BTC/USD.
+2018-11-17 11:38:51,853 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:212] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-11-17 11:38:51,853 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:223] - INFO: Reset status
+2018-11-17 11:38:51,854 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:57] - INFO: Resetting current position. Canceling all existing orders.
+2018-11-17 11:39:51,042 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:279] - INFO: Shutting down. All open orders will be cancelled.
+2018-11-17 11:39:51,044 - /Users/pillar/Documents/maker/ExchangeInterface.py[line:57] - INFO: Resetting current position. Canceling all existing orders.
