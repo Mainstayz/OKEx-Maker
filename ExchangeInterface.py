@@ -262,11 +262,11 @@ class OrderManager:
             log.logger.info("Avg cost price: %.f" % (float(self.position['avgCostPrice'])))
             log.logger.info("Avg entry price: %.f" % (float(self.position['avgEntryPrice'])))
 
-            push_message = push_message + "\nAvg Cost Price: %.6f" % (float(self.position['avgCostPrice']))
-            push_message = push_message + "\nAvg Entry Price: %.6f" % (float(self.position['avgEntryPrice']))
+            push_message = push_message + "\nAvg Cost Price: %s" % self.position['avgCostPrice']
+            push_message = push_message + "\nAvg Entry Price: %s" % self.position['avgEntryPrice']
 
         last_price = self.instrument['lastPrice']
-        push_message = push_message + '\nLast price: %.6f' % last_price
+        push_message = push_message + '\nLast price: %s' % last_price
 
         pushCommonMessage(push_message)
 
