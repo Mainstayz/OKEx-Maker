@@ -10,6 +10,7 @@ from time import sleep
 from log import Logger
 from bitmex_ccxt import Bitmex
 from config import Config
+from RestBot import *
 
 # log
 log = Logger('exchangeInterface.log', level='debug')
@@ -42,7 +43,8 @@ class ExchangeInterface:
             "Canceling: %s %s %s %s" % (order['side'], order['amount'], order['symbol'], order['price']))
         while True:
             try:
-                self.bitmex.cancel_order(order['id'])
+                order = self.bitmex.cancel_order(order['id'])
+                pushOrderInfoMessage(order)
                 sleep(settings.api_rest_interval)
             except Exception as e:
                 log.logger.error(e)
@@ -353,6 +355,24 @@ def last_order_record():
         order = dict(record)
         csvFile.close()
     return order
+
+
+def pushOrderInfoMessage(order):
+    if order is None:
+        return
+    text = '{}: {} {} {} contract with price {}. filled {}, cost {}, and remaining {}.'.format(order['datetime'],
+                                                                                               order['side'],
+                                                                                               order['amount'],
+                                                                                               order['symbol'],
+                                                                                               order['price'],
+                                                                                               order['filled'],
+                                                                                               order['cost'],
+                                                                                               order['remaining'])
+    bot.sendMessage(chat_id=741547351, text=text)
+
+
+def pushCommonMessage(content):
+    bot.sendMessage(chat_id=741547351, text=content)
 
 
 def run():

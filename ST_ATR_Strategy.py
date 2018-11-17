@@ -1,5 +1,3 @@
-import sys
-import pandas as pd
 import numpy as np
 import talib
 import threading
@@ -109,6 +107,7 @@ class CustomOrderManager(OrderManager):
                 log.logger.info('Fix order info: %s ' % edited_order)
                 # save!!
                 save_order_record(edited_order)
+                pushOrderInfoMessage(edited_order)
                 # 如果依旧无法成交
                 if edited_order['remaining'] > 0:
                     return self.check_orders()
@@ -119,6 +118,11 @@ class CustomOrderManager(OrderManager):
         t = threading.Thread(target=self.check_orders, name='Check_Orders_Thread')
         t.start()
         pass
+
+    def handle_order(self, order):
+        save_order_record(order)
+        pushOrderInfoMessage(order)
+        self.start_check_orders()
 
     def place_orders(self):
 
@@ -156,8 +160,7 @@ class CustomOrderManager(OrderManager):
             order = self.exchange.create_limit_order(amount=amount, price=price)
             log.logger.info('Open position: %s' % order)
             # save!!
-            save_order_record(order)
-            self.start_check_orders()
+            self.handle_order(order)
 
 
         # 如果持有多仓
@@ -169,8 +172,7 @@ class CustomOrderManager(OrderManager):
                 order = self.exchange.create_limit_order(amount=-position, price=price)
                 log.logger.info('Make short position: %s' % order)
                 # 添加数据库
-                save_order_record(order)
-                self.start_check_orders()
+                self.handle_order(order)
 
             pass
         # 如果持有空仓
@@ -180,8 +182,7 @@ class CustomOrderManager(OrderManager):
                 order = self.exchange.create_limit_order(amount=position, price=price)
                 log.logger.info('Make long position: %s' % order)
                 # 添加数据库
-                save_order_record(order)
-                self.start_check_orders()
+                self.handle_order(order)
         pass
 
 
