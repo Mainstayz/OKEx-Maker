@@ -4,6 +4,7 @@ import atexit
 import signal
 import constants
 import csv
+import multiprocessing
 from datetime import datetime
 from os.path import getmtime
 from time import sleep
@@ -12,6 +13,7 @@ from bitmex_ccxt import Bitmex
 from config import Config
 from RestBot import *
 from retrying import retry
+
 
 # log
 log = Logger('exchangeInterface.log', level='debug')
@@ -374,7 +376,7 @@ def last_order_record():
 
 
 @retry(stop_max_attempt_number=2)
-def pushOrderInfoMessage(order):
+def _pushOrderInfoMessage(order):
     if order is None:
         return
     text = '{}: {} {} {} contract with price {}. filled {}, cost {}, and remaining {}.'.format(order['datetime'],
@@ -389,9 +391,17 @@ def pushOrderInfoMessage(order):
 
 
 @retry(stop_max_attempt_number=2)
-def pushCommonMessage(content):
+def _pushCommonMessage(content):
     bot.sendMessage(chat_id=741547351, text=content)
 
+
+
+def pushCommonMessage(content):
+    multiprocessing.Process(target=_pushCommonMessage, args=(content,)).start()
+
+
+def pushOrderInfoMessage(order):
+    multiprocessing.Process(target=_pushOrderInfoMessage, args=(order,)).start()
 
 def run():
     log.logger.info('BitMEX Market Maker Version: %s\n' % constants.VERSION)
