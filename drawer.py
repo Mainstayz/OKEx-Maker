@@ -4,6 +4,11 @@ import plotly.io as pio
 import os
 import numpy as np
 
+orca = "/root/DONTREMOVEME/orca"
+if os.path.isfile(orca):
+    pio.orca.config.executable = orca
+    pio.orca.config.save()
+
 
 def draw_candlestick_st(df, st):
     layout = dict(
