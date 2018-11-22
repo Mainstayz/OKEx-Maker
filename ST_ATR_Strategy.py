@@ -2,7 +2,7 @@ import numpy as np
 import talib
 import threading
 import time
-from ExchangeInterface import *
+from exchangeInterface import *
 from config import Config
 settings = Config.load()
 
