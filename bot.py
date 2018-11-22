@@ -1,11 +1,13 @@
 import os
 import sys
-import socket
 import logging
 from telegram import *
 from telegram.ext import *
 from threading import Thread
 from functools import wraps
+from config import Config
+
+settings = Config.load()
 
 # 初始化Rot
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -16,24 +18,26 @@ logger = logging.getLogger(__name__)
 # 打印入参数
 logger.info("current pid: %s", os.getpid())
 for i in range(len(sys.argv)):
-    logger.info('argv %s %s'%(i,sys.argv[i]))
+    logger.info('argv %s %s' % (i, sys.argv[i]))
 
 
 # action 装饰器
 def send_action(action):
     """Sends `action` while processing func command."""
+
     def decorator(func):
         @wraps(func)
         def command_func(*args, **kwargs):
             bot, update = args
             bot.send_chat_action(chat_id=update.message.chat_id, action=action)
             func(bot, update, **kwargs)
+
         return command_func
-    
+
     return decorator
 
-send_typing_action = send_action(ChatAction.TYPING)
 
+send_typing_action = send_action(ChatAction.TYPING)
 
 
 def start(bot, update):
@@ -44,23 +48,13 @@ def unknown(bot, update):
     update.message.reply_text("Sorry, I didn't understand that command!")
 
 
-def start_socket():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    print('Bind UDP on 9999...')
-    while True:
-        # 接收数据:
-        data, addr = s.recvfrom(1024)
-        print('Received from %s:%s.' % addr)
-        reply = 'Hello, %s!' % data.decode('utf-8')
-        s.sendto(reply.encode('utf-8'), addr)
-
 def main():
-
     TOKEN = '706594478:AAFjQFtuHgiR_DoB1HO9MJdPwoI_IpmkMzw'
     REQUEST_KWARGS = {
         'proxy_url': 'http://127.0.0.1:1087'
     }
-    updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS)
+
+    updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS if settings.enable_proxy else None)
     dispatcher = updater.dispatcher
 
     def stop_and_restart():
@@ -72,7 +66,7 @@ def main():
         update.message.reply_text('Bot is restarting...')
         Thread(target=stop_and_restart).start()
 
-    dispatcher.add_handler(CommandHandler('r', restart))
+    dispatcher.add_handler(CommandHandler('restart', restart))
 
     dispatcher.add_handler(CommandHandler('start', start))
 
@@ -80,10 +74,8 @@ def main():
     dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
     updater.start_polling()
+
     updater.idle()
-
-    # 启动socket
-
 
 
 if __name__ == '__main__':
