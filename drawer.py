@@ -25,7 +25,10 @@ def draw_candlestick_st(df, st):
 
     # iplot(fig)
     file_name = 'sta.png'
-    pio.write_image(fig, file_name, scale=2)
+    try:
+        pio.write_image(fig, file_name, scale=2)
+    except Exception as e:
+        print(e)
     return file_name
 
 
