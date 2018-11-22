@@ -59,7 +59,8 @@ def done(bot, update):
     file = report(data)
     if file:
         bot.sendPhoto(chat_id=741547351, photo=open(file, 'rb'))
-    pass
+    else:
+        print('draw..error..')
 
 
 ############################# Handlers #########################################

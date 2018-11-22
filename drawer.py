@@ -29,6 +29,8 @@ def draw_candlestick_st(df, st):
         pio.write_image(fig, file_name, scale=2)
     except Exception as e:
         print(e)
+        return None
+
     return file_name
 
 
