@@ -1,17 +1,14 @@
+import copy
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from reporter import *
-import copy
+from config import Config
+settings = Config.load()
 
 ############################### Bot ############################################
 
 input_data = {}
-
-
-def start(bot, update):
-    update.message.reply_text(main_menu_message(),
-                              reply_markup=main_menu_keyboard())
 
 
 def symbol_menu(bot, update):
@@ -72,7 +69,7 @@ REQUEST_KWARGS = {
     'proxy_url': 'http://127.0.0.1:1087'
 }
 
-updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS)
+updater = Updater(TOKEN, request_kwargs=REQUEST_KWARGS if settings.enable_proxy else None)
 
 updater.dispatcher.add_handler(CommandHandler('info', symbol_menu))
 updater.dispatcher.add_handler(CallbackQueryHandler(dateframe_menu, pattern='symbol_.*'))
