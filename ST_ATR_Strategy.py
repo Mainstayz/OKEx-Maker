@@ -4,7 +4,10 @@ import threading
 import time
 from exchangeInterface import *
 from config import Config
+import sys
+
 settings = Config.load()
+log.logger.warning('sys: %s' % ([sys.executable] + sys.argv))
 
 
 def super_trend_atr(df, period, multiplier):
@@ -25,6 +28,7 @@ def super_trend_atr(df, period, multiplier):
     df['final_lb'] = 0.00
 
     for i in range(period, len(df)):
+        #  如果 basic_ub < final_ub[]
         df['final_ub'].iat[i] = df['basic_ub'].iat[i] if df['basic_ub'].iat[i] < df['final_ub'].iat[i - 1] or \
                                                          df['close'].iat[i - 1] > df['final_ub'].iat[i - 1] else \
             df['final_ub'].iat[i - 1]
@@ -35,14 +39,11 @@ def super_trend_atr(df, period, multiplier):
     # Set the Supertrend value
     df[st] = 0.00
     for i in range(period, len(df)):
-        df[st].iat[i] = df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[
-            i] <= df['final_ub'].iat[i] else \
-            df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] > \
-                                     df['final_ub'].iat[i] else \
-                df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= \
-                                         df['final_lb'].iat[i] else \
-                    df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < \
-                                             df['final_lb'].iat[i] else 0.00
+        #  1. 做空 2.空转多 3.做空 4.多转空
+        df[st].iat[i] = df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] <= df['final_ub'].iat[i] else \
+            df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] > df['final_ub'].iat[i] else \
+                df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= df['final_lb'].iat[i] else \
+                    df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < df['final_lb'].iat[i] else 0.00
 
     # Mark the trend direction up/down
     df[stx] = np.where((df[st] > 0.00), np.where(
@@ -137,7 +138,7 @@ class CustomOrderManager(OrderManager):
         return self.check_orders()
 
     def place_orders(self):
-
+        
         data = self.exchange.get_ohlc()
 
         conf = settings.strategies['STA']
