@@ -197,9 +197,11 @@ class CustomOrderManager(OrderManager):
             # 上升趋势中，不做空
             if is_long > 0 and amount < 0:
                 log.logger.info('Upward trend！！Don`t open Short position!!!')
+                pushCommonMessage('Upward trend！！Don`t open Short position!!!')
                 return
             if is_long <= 0 and amount > 0:
                 log.logger.info('Down trend！！Don`t open Long position!!!')
+                pushCommonMessage('Down trend！！Don`t open Long position!!!')
                 return
 
             order = self.exchange.create_limit_order(amount=amount, price=price)
