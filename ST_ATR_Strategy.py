@@ -40,10 +40,14 @@ def super_trend_atr(df, period, multiplier):
     df[st] = 0.00
     for i in range(period, len(df)):
         #  1. 做空 2.空转多 3.做空 4.多转空
-        df[st].iat[i] = df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] <= df['final_ub'].iat[i] else \
-            df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] > df['final_ub'].iat[i] else \
-                df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= df['final_lb'].iat[i] else \
-                    df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < df['final_lb'].iat[i] else 0.00
+        df[st].iat[i] = df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[
+            i] <= df['final_ub'].iat[i] else \
+            df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_ub'].iat[i - 1] and df['close'].iat[i] > \
+                                     df['final_ub'].iat[i] else \
+                df['final_lb'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] >= \
+                                         df['final_lb'].iat[i] else \
+                    df['final_ub'].iat[i] if df[st].iat[i - 1] == df['final_lb'].iat[i - 1] and df['close'].iat[i] < \
+                                             df['final_lb'].iat[i] else 0.00
 
     # Mark the trend direction up/down
     df[stx] = np.where((df[st] > 0.00), np.where(
@@ -138,11 +142,12 @@ class CustomOrderManager(OrderManager):
         return self.check_orders()
 
     def place_orders(self):
-        
+
         data = self.exchange.get_ohlc()
 
         conf = settings.strategies['STA']
 
+        # atr
         atr, st, stx = super_trend_atr(data, conf['period'], conf['multiplier'])
 
         signal = stx.values[-1]
@@ -169,6 +174,7 @@ class CustomOrderManager(OrderManager):
 
         amount = 0
         price = 0
+
         if signal == 'down':
             price = bid_price
             amount = quantity(mult, total_btc * leverage, bid_price) * -1
@@ -182,6 +188,20 @@ class CustomOrderManager(OrderManager):
         if position == 0:
             # 获取 9/10 层仓位
             amount = int(amount * 0.9)
+            # ema
+            ema100 = talib.EMA(data['close'], 100)
+            ema200 = talib.EMA(data['close'], 200)
+            # 做多
+            is_long = ema100[-1] - ema200[-1]
+
+            # 上升趋势中，不做空
+            if is_long > 0 and amount < 0:
+                log.logger.info('Upward trend！！Don`t open Short position!!!')
+                return
+            if is_long <= 0 and amount > 0:
+                log.logger.info('Down trend！！Don`t open Long position!!!')
+                return
+
             order = self.exchange.create_limit_order(amount=amount, price=price)
             log.logger.info('Open position: %s' % order)
             self.handle_order(order)
