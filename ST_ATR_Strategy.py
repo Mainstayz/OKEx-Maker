@@ -188,11 +188,11 @@ class CustomOrderManager(OrderManager):
         if position == 0:
             # 获取 9/10 层仓位
             amount = int(amount * 0.9)
-            # ema
-            ema100 = talib.EMA(data['close'], 100)
-            ema200 = talib.EMA(data['close'], 200)
+            # MA
+            MA100 = talib.MA(data['close'], 100, 0)
+            MA200 = talib.MA(data['close'], 200, 0)
             # 做多
-            is_long = ema100[-1] - ema200[-1]
+            is_long = MA100[-1] - MA200[-1]
 
             # 上升趋势中，不做空
             if is_long > 0 and amount < 0:
