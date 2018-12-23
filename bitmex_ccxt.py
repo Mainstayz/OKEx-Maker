@@ -150,9 +150,11 @@ class Bitmex:
 
 
 if __name__ == '__main__':
-    pass
     access = TOKEN['test']
     bitmex = Bitmex(api_key=access['apiKey'], secret=access['secret'], enable_proxy=True, test=True)
+    data = bitmex.fetch_ohlc('BTC/USD')
+    print(data)
+
     # orders = bitmex.open_orders('BTC/USD')
     # print(orders)
     # print(bitmex.delta('XBTUSD'))

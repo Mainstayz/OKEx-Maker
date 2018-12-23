@@ -5,6 +5,7 @@ import time
 from exchangeInterface import *
 from config import Config
 import sys
+from retrying import retry
 
 settings = Config.load()
 log.logger.warning('sys: %s' % ([sys.executable] + sys.argv))
@@ -141,6 +142,8 @@ class CustomOrderManager(OrderManager):
         pushOrderInfoMessage(order)
         return self.check_orders()
 
+
+    @retry(stop_max_attempt_number=10)
     def place_orders(self):
 
         data = self.exchange.get_ohlc()
@@ -221,6 +224,8 @@ class CustomOrderManager(OrderManager):
                     time.sleep(settings.api_rest_interval)
                     self.print_status()
                     self.place_orders()
+            else:
+                log.logger.info('waiting .... next loop')
 
         # 如果持有空仓
         elif position < 0:
@@ -231,7 +236,8 @@ class CustomOrderManager(OrderManager):
                     time.sleep(settings.api_rest_interval)
                     self.print_status()
                     self.place_orders()
-
+            else:
+                log.logger.info('waiting .... next loop')
 
 def run() -> None:
     order_manager = CustomOrderManager()

@@ -375,7 +375,7 @@ def last_order_record():
     return order
 
 
-@retry(stop_max_attempt_number=2)
+@retry(stop_max_attempt_number=10)
 def _pushOrderInfoMessage(order):
     if order is None:
         return
@@ -390,7 +390,7 @@ def _pushOrderInfoMessage(order):
     bot.sendMessage(chat_id=741547351, text=text)
 
 
-@retry(stop_max_attempt_number=2)
+@retry(stop_max_attempt_number=10)
 def _pushCommonMessage(content):
     bot.sendMessage(chat_id=741547351, text=content)
 
