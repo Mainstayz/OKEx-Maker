@@ -1,0 +1,84 @@
+2018-12-25 23:58:58,331 - ST_ATR_Strategy.py[line:11] - WARNING: sys: ['/anaconda3/bin/python3', 'ST_ATR_Strategy.py']
+2018-12-25 23:59:09,207 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:214] - INFO: Using symbol BTC/USD.
+2018-12-25 23:59:09,208 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:215] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-12-25 23:59:09,208 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:226] - INFO: Reset status
+2018-12-25 23:59:09,208 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.
+2018-12-25 23:59:17,385 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006047
+2018-12-25 23:59:19,292 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-25 23:59:19,292 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 1
+2018-12-25 23:59:19,292 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3727
+2018-12-25 23:59:19,293 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3727
+2018-12-25 23:59:29,839 - ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-25 23:59:30,238 - ST_ATR_Strategy.py[line:166] - INFO: Current leverage 1
+2018-12-25 23:59:32,166 - ST_ATR_Strategy.py[line:188] - INFO: Full position -22.33363419
+2018-12-25 23:59:32,166 - ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-25 23:59:38,574 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006048
+2018-12-25 23:59:40,902 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-25 23:59:40,903 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 1
+2018-12-25 23:59:40,903 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3727
+2018-12-25 23:59:40,903 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3727
+2018-12-26 00:00:17,607 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:295] - INFO: Shutting down. All open orders will be cancelled.
+2018-12-26 00:00:17,607 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.
+2018-12-26 00:01:31,074 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:11] - WARNING: sys: ['/anaconda3/bin/python', '/Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py']
+2018-12-26 00:52:26,662 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:11] - WARNING: sys: ['/anaconda3/bin/python', '/Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py']
+2018-12-26 00:52:31,177 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:214] - INFO: Using symbol BTC/USD.
+2018-12-26 00:52:31,178 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:215] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-12-26 00:52:31,180 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:226] - INFO: Reset status
+2018-12-26 00:52:31,181 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.
+2018-12-26 00:52:37,798 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006001
+2018-12-26 00:52:39,723 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-26 00:52:39,725 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 3
+2018-12-26 00:52:39,727 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3710
+2018-12-26 00:52:39,728 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3710
+2018-12-26 00:52:43,175 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-26 00:52:43,711 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 00:52:45,786 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position -66.69500301
+2018-12-26 00:52:45,787 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-26 00:52:51,718 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006001
+2018-12-26 00:52:53,738 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-26 00:52:53,739 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 3
+2018-12-26 00:52:53,740 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3710
+2018-12-26 00:52:53,742 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3710
+2018-12-26 00:52:57,303 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-26 00:52:57,835 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 00:52:59,905 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position -66.69722571
+2018-12-26 00:52:59,907 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-26 00:53:19,864 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:295] - INFO: Shutting down. All open orders will be cancelled.
+2018-12-26 00:53:19,868 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.
+2018-12-26 00:53:29,683 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:11] - WARNING: sys: ['/anaconda3/bin/python', '/Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py']
+2018-12-26 00:53:34,310 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:214] - INFO: Using symbol BTC/USD.
+2018-12-26 00:53:34,311 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:215] - INFO: Order Manager initializing, connecting to BitMEX. Live run: executing real trades.
+2018-12-26 00:53:34,313 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:226] - INFO: Reset status
+2018-12-26 00:53:34,314 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.
+2018-12-26 00:53:40,876 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006003
+2018-12-26 00:53:42,839 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-26 00:53:42,840 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 3
+2018-12-26 00:53:42,842 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3710
+2018-12-26 00:53:42,843 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3710
+2018-12-26 00:56:34,939 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-26 00:56:35,440 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 00:56:37,491 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position -66.68905893
+2018-12-26 00:56:37,493 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-26 00:56:43,565 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.006010
+2018-12-26 00:56:45,513 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-26 00:56:45,514 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 3
+2018-12-26 00:56:45,515 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3710
+2018-12-26 00:56:45,516 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3710
+2018-12-26 00:56:48,931 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-26 00:56:49,510 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 00:56:51,560 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position -66.68905893
+2018-12-26 00:56:51,563 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-26 07:06:36,178 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:244] - INFO: Current XBT balance: 0.005952
+2018-12-26 07:06:38,226 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:250] - INFO: Current position: -20
+2018-12-26 07:06:38,227 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:253] - INFO: Current leverage: 3
+2018-12-26 07:06:38,228 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:264] - INFO: Avg cost price: 3710
+2018-12-26 07:06:38,229 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:265] - INFO: Avg entry price: 3710
+2018-12-26 07:06:41,271 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal up
+2018-12-26 07:06:42,219 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 07:06:44,369 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position 66.76378254000001
+2018-12-26 09:06:56,566 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:158] - INFO: signal down
+2018-12-26 09:06:56,954 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:166] - INFO: Current leverage 3
+2018-12-26 09:06:58,954 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:188] - INFO: Full position -66.174336045
+2018-12-26 09:06:58,957 - /Users/zz/Desktop/OKEx-Maker/ST_ATR_Strategy.py[line:240] - INFO: waiting .... next loop
+2018-12-26 21:11:46,620 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:295] - INFO: Shutting down. All open orders will be cancelled.
+2018-12-26 21:11:46,622 - /Users/zz/Desktop/OKEx-Maker/exchangeInterface.py[line:60] - INFO: Resetting current position. Canceling all existing orders.

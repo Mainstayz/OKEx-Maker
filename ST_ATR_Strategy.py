@@ -159,6 +159,13 @@ class CustomOrderManager(OrderManager):
 
         # 获取仓位
         position = self.position['currentQty']
+
+        # 平均成本价
+        avgCostPrice = self.position['avgCostPrice']
+
+        # 平均入场价
+        avgEntryPrice = self.position['avgEntryPrice']
+
         # 获取BTC
         total_btc = self.exchange.bitmex.total_funds()
         # 杠杆
@@ -189,8 +196,8 @@ class CustomOrderManager(OrderManager):
 
         # 如果空仓
         if position == 0:
-            # 获取 9/10 层仓位
-            amount = int(amount * 0.9)
+            # 获取 1/10 层仓位
+            amount = int(amount * 0.1)
             # MA
             MA100 = talib.MA(data['close'], 100, 0)
             MA200 = talib.MA(data['close'], 200, 0)
